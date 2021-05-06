@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5025a33d3f74fff9c029c78ea145736" Name="Diagram1">
+        <EntityTypeShape EntityType="DrinkAgeModel.Achievement" Width="1.5" PointX="0.75" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Category" Width="1.5" PointX="1.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.CategoryDetail" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.City" Width="1.5" PointX="1.5" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Comment" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Employee" Width="1.5" PointX="3.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.FavoriteProduct" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.FavoriteStore" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Ingredient" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Member" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.MemberACHV" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.MemPointDetail" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Order_Detail" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Order" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Points_Mall" Width="1.5" PointX="6" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Product" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.ProductSizePrice" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Region" Width="1.5" PointX="1.5" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Size" Width="1.5" PointX="6" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Store" Width="1.5" PointX="3.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.StoreDiscount" Width="1.5" PointX="6" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.StoreIngredientPrice" Width="1.5" PointX="8.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Sugar" Width="1.5" PointX="6" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.sysdiagram" Width="1.5" PointX="10.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkAgeModel.Temperature" Width="1.5" PointX="6" PointY="26.5" IsExpanded="true" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Achievements_CategoryDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Achievements_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_memberACHV_Achievements" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_CategoryDetail_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Products_CategoryDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Region_City" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Comment_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Orders_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_favoriteProducts_member" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_favoriteProducts_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_favoriteStore_member" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_favoriteStore_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Order_Details_Ingredients" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_StoreIngredientPrice_Ingredients" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_memberACHV_member" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_memPointDetails_member" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Orders_member" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_memPointDetails_Points_Mall" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Order_Details_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Order_Details_Points_Mall" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Order_Details_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Order_Details_StoreDiscount" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Order_Details_Sugar" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Order_Details_Temperature" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Orders_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Products_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_ProductSizePrice_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_ProductSizePrice_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_Store_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_StoreDiscount_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="DrinkAgeModel.FK_StoreIngredientPrice_Store" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
