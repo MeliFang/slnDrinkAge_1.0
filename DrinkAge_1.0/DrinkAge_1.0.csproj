@@ -158,6 +158,12 @@
     <Compile Include="Temperature.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LangControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LangControl.designer.cs">
+      <DependentUpon>LangControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -167,6 +173,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LangControl.resx">
+      <DependentUpon>LangControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="da_DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>da_DataModel.Designer.cs</LastGenOutput>
@@ -210,6 +219,7 @@
       <DependentUpon>da_DataModel.edmx</DependentUpon>
       <LastGenOutput>da_DataModel.cs</LastGenOutput>
     </Content>
+    <Content Include="image\gura.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
