@@ -67,6 +67,9 @@
     <Compile Include="City.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClassOfConsole\UpdateFortable.cs" />
+    <Compile Include="ClassOfConsole\DataGridviewQuery.cs" />
+    <Compile Include="ClassOfConsole\QueryForTable.cs" />
     <Compile Include="Comment.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
@@ -99,14 +102,14 @@
     <Compile Include="FavoriteStore.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ingredient.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LangCotrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LangCotrol.Designer.cs">
+      <DependentUpon>LangCotrol.cs</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
@@ -158,12 +161,15 @@
     <Compile Include="Temperature.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="LangControl.cs">
+    <Compile Include="Test1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LangControl.designer.cs">
-      <DependentUpon>LangControl.cs</DependentUpon>
+    <Compile Include="Test1.Designer.cs">
+      <DependentUpon>Test1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LangCotrol.resx">
+      <DependentUpon>LangCotrol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -173,8 +179,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LangControl.resx">
-      <DependentUpon>LangControl.cs</DependentUpon>
+    <EmbeddedResource Include="Test1.resx">
+      <DependentUpon>Test1.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="da_DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
