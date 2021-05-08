@@ -102,6 +102,12 @@
     <Compile Include="FavoriteStore.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FrmTest_fang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTest_fang.Designer.cs">
+      <DependentUpon>FrmTest_fang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ingredient.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
