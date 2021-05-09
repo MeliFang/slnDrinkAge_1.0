@@ -102,11 +102,11 @@
     <Compile Include="FavoriteStore.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FrmTest_fang.cs">
+    <Compile Include="FrmSearch_Fang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTest_fang.Designer.cs">
-      <DependentUpon>FrmTest_fang.cs</DependentUpon>
+    <Compile Include="FrmSearch_Fang.Designer.cs">
+      <DependentUpon>FrmSearch_Fang.cs</DependentUpon>
     </Compile>
     <Compile Include="Ingredient.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
@@ -173,6 +173,9 @@
     <Compile Include="Test1.Designer.cs">
       <DependentUpon>Test1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmSearch_Fang.resx">
+      <DependentUpon>FrmSearch_Fang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LangCotrol.resx">
       <DependentUpon>LangCotrol.cs</DependentUpon>
     </EmbeddedResource>
