@@ -64,19 +64,19 @@ namespace DrinkAge_1._0
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            TBCT=TBMemRVchange.Text;
-            UpForTa.MemUpdate(TBCT,DGVC,bindingSource1.Position);
-            Mem = QueryTowhere.ConditionOfMember(combo, ComboboxCondT.Text, TextboxCondValue.Text);
-            bindingSource1.DataSource = Mem.ToList();
-            bindingNavigator1.BindingSource = bindingSource1;
-            dataGridView1.DataSource = bindingSource1;
-            TBMemRVchange.Text="";
-
+            //TBCT=TxTBMemID.Text;
+            //UpForTa.MemUpdate(TBCT,DGVC,bindingSource1.Position);
+            //Mem = QueryTowhere.ConditionOfMember(combo, ComboboxCondT.Text, TextboxCondValue.Text);
+            //bindingSource1.DataSource = Mem.ToList();
+            //bindingNavigator1.BindingSource = bindingSource1;
+            //dataGridView1.DataSource = bindingSource1;
+            //TxTBMemID.Text="";
+            
         }
         string DGVR;
         string DGVC;
@@ -96,10 +96,19 @@ namespace DrinkAge_1._0
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DGVR=DataGQ.DataRowstoValue(sender, e);
-            LabelMemRow.Text = DGVR;
-            DGVC = DataGQ.DataColumnstoValue(sender, e);
-            LabelMemColum.Text = DGVC;
+            Dictionary<string, string> MemisRV;
+            MemisRV=DataGQ.DataRowstoValue(sender, e);
+            foreach (var x in TBpanel.Controls)
+            {
+                if (x.GetType() == typeof(TextBox))
+                {
+                    if (MemisRV.ContainsKey((x as TextBox).Name))
+                    {
+                        (x as TextBox).Text=MemisRV[(x as TextBox).Name];
+                    }
+                    
+                }
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -115,6 +124,11 @@ namespace DrinkAge_1._0
         private void ComboboxCondT_MouseDown(object sender, MouseEventArgs e)
         {
             
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

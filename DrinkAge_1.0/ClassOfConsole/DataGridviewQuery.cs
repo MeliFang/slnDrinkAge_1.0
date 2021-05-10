@@ -9,7 +9,7 @@ namespace DrinkAge_1._0.ClassOfConsole
 {
     class DataGridviewQuery
     {
-        internal List<string> Comvle{ get; set;}
+        internal List<string> Comvle;
         internal List<string> DGColumntoCom(object sender)
         {
             List<string> Com = new List<string>();
@@ -25,20 +25,20 @@ namespace DrinkAge_1._0.ClassOfConsole
             return Comvle;
         }
 
-        internal string DataRowstoValue(object sender, DataGridViewCellEventArgs o)
+        internal Dictionary<string, string> DataRowstoValue(object sender, DataGridViewCellEventArgs o)
         {
             DataGridView Row = sender as DataGridView;
+            Dictionary<string,string> MemRowisValue = new Dictionary<string, string>();
             int i = Row.CurrentCell.RowIndex;
-            int j = Row.CurrentCell.ColumnIndex;
-            string RV = Row.Rows[i].Cells[j].Value.ToString();
-            return RV;
+            for (int x = 0; Row.Columns.Count > x; x++)
+            {
+                if (Row.Columns[x].HeaderText != "MemberPIC")
+                {
+                    MemRowisValue.Add(Row.Columns[x].HeaderText, Row.Rows[i].Cells[x].Value.ToString());
+                }
+            }
+            return MemRowisValue;
         }
-        internal string DataColumnstoValue(object sender, DataGridViewCellEventArgs o)
-        {
-            DataGridView Column = sender as DataGridView;
-            int j = Column.CurrentCell.ColumnIndex;
-            string CV = Column.Columns[j].HeaderText;
-            return CV;
-        }
+        
     }
 }
