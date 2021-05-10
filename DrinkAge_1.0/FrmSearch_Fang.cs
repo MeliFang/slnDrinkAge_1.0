@@ -183,5 +183,10 @@ namespace DrinkAge_1._0
                 conn.Close();
             }
         }
+
+        private void btnGPRank_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
