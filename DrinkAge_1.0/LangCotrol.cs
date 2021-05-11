@@ -1,9 +1,8 @@
 ﻿using DrinkAge_1._0.ClassOfConsole;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using System.Reflection;
-using System.Collections.Generic;
 
 namespace DrinkAge_1._0
 {
@@ -32,11 +31,24 @@ namespace DrinkAge_1._0
             bindingSource1 = QueryTowhere.MemberQueryAll();
             bindingNavigator1.BindingSource = bindingSource1;
             dataGridView1.DataSource = bindingSource1;
-            combo=DataGQ.DGColumntoCom(dataGridView1);
-            foreach (var i in combo)
+            if(combo==null)
             {
-                ComboboxCondT.Items.Add(i);
+                combo = DataGQ.DGColumntoCom(dataGridView1);
+                foreach (var i in combo)
+                {
+                    ComboboxCondT.Items.Add(i);
+                }
             }
+            foreach (var x in TBpanel.Controls)
+            {
+                if (x.GetType() == typeof(TextBox))
+                {
+
+                    (x as TextBox).Text = "";
+                }
+            }
+            dataGridView1_SelectionChanged(dataGridView1, e);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -69,18 +81,15 @@ namespace DrinkAge_1._0
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //TBCT=TxTBMemID.Text;
-            //UpForTa.MemUpdate(TBCT,DGVC,bindingSource1.Position);
+            //TBCT = TxTBMemID.Text;
+            //UpForTa.MemUpdate(TBCT, DGVC, bindingSource1.Position);
             //Mem = QueryTowhere.ConditionOfMember(combo, ComboboxCondT.Text, TextboxCondValue.Text);
             //bindingSource1.DataSource = Mem.ToList();
             //bindingNavigator1.BindingSource = bindingSource1;
             //dataGridView1.DataSource = bindingSource1;
-            //TxTBMemID.Text="";
-            
+            //TxTBMemID.Text = "";
+
         }
-        string DGVR;
-        string DGVC;
-        string TBCT;
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -94,21 +103,11 @@ namespace DrinkAge_1._0
         {
             
         }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        Dictionary<string, string> MemisRV;
+        private void dataGridView1_CellClickled(object sender, DataGridViewCellEventArgs e)
         {
-            Dictionary<string, string> MemisRV;
-            MemisRV=DataGQ.DataRowstoValue(sender, e);
-            foreach (var x in TBpanel.Controls)
-            {
-                if (x.GetType() == typeof(TextBox))
-                {
-                    if (MemisRV.ContainsKey((x as TextBox).Name))
-                    {
-                        (x as TextBox).Text=MemisRV[(x as TextBox).Name];
-                    }
-                    
-                }
-            }
+            MemisRV=DataGQ.DataRowstoValue(sender);
+            dataGridViewtopanel();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -129,6 +128,54 @@ namespace DrinkAge_1._0
         private void label15_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ComboboxCondT_TextChanged(object sender, EventArgs e)
+        {
+            TextboxCondValue.Text = "";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Switch=1;
+            dataGridViewtopanel();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            MemisRV = DataGQ.DataRowstoValue(sender);
+            dataGridViewtopanel();
+        }
+        int Switch { get; set; }
+        private void dataGridViewtopanel()
+        {
+            Dictionary<string, string> MemRVCG = new Dictionary<string, string>();
+            foreach (var x in TBpanel.Controls)
+            {
+                if (x.GetType() == typeof(TextBox))
+                {
+                    if (Switch == 0)
+                    {
+                        if (MemisRV.ContainsKey((x as TextBox).Name))
+                        {
+                            (x as TextBox).Text = MemisRV[(x as TextBox).Name];
+                        }
+                    }
+                    else
+                    {
+                        if (MemisRV.ContainsKey((x as TextBox).Name))
+                        {
+                            if ((x as TextBox).Text != MemisRV[(x as TextBox).Name])
+                            {
+                                MemRVCG.Add((x as TextBox).Name, (x as TextBox).Text);
+                            }
+
+                        }
+                    }
+                    
+
+                }
+            }
         }
     }
 }

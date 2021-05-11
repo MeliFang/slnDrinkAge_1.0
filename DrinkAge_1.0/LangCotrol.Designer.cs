@@ -54,35 +54,38 @@ namespace DrinkAge_1._0
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.MemberID = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.Account = new System.Windows.Forms.TextBox();
-            this.Password = new System.Windows.Forms.TextBox();
-            this.NickName = new System.Windows.Forms.TextBox();
-            this.Gender = new System.Windows.Forms.TextBox();
-            this.Email = new System.Windows.Forms.TextBox();
-            this.Birth = new System.Windows.Forms.TextBox();
-            this.Phone = new System.Windows.Forms.TextBox();
-            this.Level = new System.Windows.Forms.TextBox();
-            this.Exp = new System.Windows.Forms.TextBox();
-            this.Point = new System.Windows.Forms.TextBox();
-            this.ACHVID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TBpanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.MemberID = new System.Windows.Forms.TextBox();
+            this.ACHVID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Point = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Exp = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Level = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Phone = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Birth = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Gender = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.NickName = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Password = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Account = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -104,9 +107,9 @@ namespace DrinkAge_1._0
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.TBpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -114,10 +117,9 @@ namespace DrinkAge_1._0
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(4, 46);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(3, 37);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 35);
+            this.button2.Size = new System.Drawing.Size(97, 28);
             this.button2.TabIndex = 3;
             this.button2.Text = "條件搜索";
             this.button2.UseVisualStyleBackColor = true;
@@ -127,20 +129,18 @@ namespace DrinkAge_1._0
             // 
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(213, 208);
+            this.pictureBox1.Size = new System.Drawing.Size(160, 166);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // Memberdisplay
             // 
             this.Memberdisplay.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Memberdisplay.Location = new System.Drawing.Point(4, 4);
-            this.Memberdisplay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Memberdisplay.Location = new System.Drawing.Point(3, 3);
             this.Memberdisplay.Name = "Memberdisplay";
-            this.Memberdisplay.Size = new System.Drawing.Size(130, 35);
+            this.Memberdisplay.Size = new System.Drawing.Size(98, 28);
             this.Memberdisplay.TabIndex = 1;
             this.Memberdisplay.Text = "總會員顯示";
             this.Memberdisplay.UseVisualStyleBackColor = true;
@@ -150,19 +150,18 @@ namespace DrinkAge_1._0
             // 
             this.ComboboxCondT.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.ComboboxCondT.FormattingEnabled = true;
-            this.ComboboxCondT.Location = new System.Drawing.Point(142, 53);
-            this.ComboboxCondT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboboxCondT.Location = new System.Drawing.Point(106, 42);
             this.ComboboxCondT.Name = "ComboboxCondT";
-            this.ComboboxCondT.Size = new System.Drawing.Size(149, 28);
+            this.ComboboxCondT.Size = new System.Drawing.Size(113, 24);
             this.ComboboxCondT.TabIndex = 4;
+            this.ComboboxCondT.TextChanged += new System.EventHandler(this.ComboboxCondT_TextChanged);
             // 
             // TextboxCondValue
             // 
             this.TextboxCondValue.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TextboxCondValue.Location = new System.Drawing.Point(4, 89);
-            this.TextboxCondValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextboxCondValue.Location = new System.Drawing.Point(3, 71);
             this.TextboxCondValue.Name = "TextboxCondValue";
-            this.TextboxCondValue.Size = new System.Drawing.Size(287, 31);
+            this.TextboxCondValue.Size = new System.Drawing.Size(216, 27);
             this.TextboxCondValue.TabIndex = 5;
             this.TextboxCondValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ComboboxCondT_MouseDown);
             // 
@@ -171,10 +170,9 @@ namespace DrinkAge_1._0
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(1129, 70);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(756, 70);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 35);
+            this.button1.Size = new System.Drawing.Size(97, 28);
             this.button1.TabIndex = 6;
             this.button1.Text = "儲存更改";
             this.button1.UseVisualStyleBackColor = true;
@@ -188,22 +186,21 @@ namespace DrinkAge_1._0
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 35);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1285, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(961, 247);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClickled);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // splitContainer1
             // 
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -214,9 +211,8 @@ namespace DrinkAge_1._0
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1544, 869);
-            this.splitContainer1.SplitterDistance = 230;
-            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(1158, 695);
+            this.splitContainer1.SplitterDistance = 172;
             this.splitContainer1.TabIndex = 3;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
@@ -225,37 +221,33 @@ namespace DrinkAge_1._0
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.pictureBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(230, 869);
-            this.splitContainer2.SplitterDistance = 218;
-            this.splitContainer2.SplitterWidth = 5;
+            this.splitContainer2.Size = new System.Drawing.Size(172, 695);
+            this.splitContainer2.SplitterDistance = 174;
             this.splitContainer2.TabIndex = 2;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.DAMember);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 4);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Location = new System.Drawing.Point(0, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1305, 862);
+            this.tabControl1.Size = new System.Drawing.Size(979, 690);
             this.tabControl1.TabIndex = 0;
             // 
             // DAMember
             // 
             this.DAMember.Controls.Add(this.splitContainer3);
-            this.DAMember.Location = new System.Drawing.Point(4, 25);
-            this.DAMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DAMember.Location = new System.Drawing.Point(4, 22);
             this.DAMember.Name = "DAMember";
-            this.DAMember.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.DAMember.Size = new System.Drawing.Size(1297, 833);
+            this.DAMember.Padding = new System.Windows.Forms.Padding(3);
+            this.DAMember.Size = new System.Drawing.Size(971, 664);
             this.DAMember.TabIndex = 2;
             this.DAMember.Text = "DAMember";
             this.DAMember.UseVisualStyleBackColor = true;
@@ -264,8 +256,7 @@ namespace DrinkAge_1._0
             // 
             this.splitContainer3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(4, 4);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -277,9 +268,8 @@ namespace DrinkAge_1._0
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(1289, 825);
-            this.splitContainer3.SplitterDistance = 354;
-            this.splitContainer3.SplitterWidth = 5;
+            this.splitContainer3.Size = new System.Drawing.Size(965, 658);
+            this.splitContainer3.SplitterDistance = 282;
             this.splitContainer3.TabIndex = 1;
             // 
             // bindingNavigator1
@@ -306,14 +296,14 @@ namespace DrinkAge_1._0
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1285, 31);
+            this.bindingNavigator1.Size = new System.Drawing.Size(961, 27);
             this.bindingNavigator1.TabIndex = 4;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(27, 24);
             this.bindingNavigatorCountItem.Text = "/{0}";
             this.bindingNavigatorCountItem.ToolTipText = "項目總數";
             // 
@@ -323,7 +313,7 @@ namespace DrinkAge_1._0
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "移到最前面";
             // 
             // bindingNavigatorMovePreviousItem
@@ -332,13 +322,13 @@ namespace DrinkAge_1._0
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "移到上一個";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -346,14 +336,14 @@ namespace DrinkAge_1._0
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "目前的位置";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -361,7 +351,7 @@ namespace DrinkAge_1._0
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "移到下一個";
             // 
             // bindingNavigatorMoveLastItem
@@ -370,24 +360,26 @@ namespace DrinkAge_1._0
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "移到最後面";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // splitContainer4
             // 
             this.splitContainer4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer4.Name = "splitContainer4";
             this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer4.Panel1
             // 
+            this.splitContainer4.Panel1.Controls.Add(this.button5);
+            this.splitContainer4.Panel1.Controls.Add(this.button4);
+            this.splitContainer4.Panel1.Controls.Add(this.button3);
             this.splitContainer4.Panel1.Controls.Add(this.TextboxCondValue);
             this.splitContainer4.Panel1.Controls.Add(this.Memberdisplay);
             this.splitContainer4.Panel1.Controls.Add(this.button1);
@@ -396,275 +388,33 @@ namespace DrinkAge_1._0
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.TBpanel);
             this.splitContainer4.Panel2.Controls.Add(this.pictureBox2);
+            this.splitContainer4.Panel2.Controls.Add(this.TBpanel);
             this.splitContainer4.Panel2.Controls.Add(this.label1);
-            this.splitContainer4.Size = new System.Drawing.Size(1287, 464);
-            this.splitContainer4.SplitterDistance = 133;
-            this.splitContainer4.SplitterWidth = 5;
+            this.splitContainer4.Size = new System.Drawing.Size(965, 371);
+            this.splitContainer4.SplitterDistance = 106;
             this.splitContainer4.TabIndex = 7;
             // 
-            // MemberID
+            // button3
             // 
-            this.MemberID.Location = new System.Drawing.Point(139, 11);
-            this.MemberID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MemberID.Name = "MemberID";
-            this.MemberID.Size = new System.Drawing.Size(227, 25);
-            this.MemberID.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(4, 106);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 24);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Password:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(4, 12);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 24);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "MemberID:";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1297, 833);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(17, 60);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 24);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Account:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(374, 249);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 24);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "ACHVID:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(387, 201);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 24);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Point:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(413, 154);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 24);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Exp:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.Location = new System.Drawing.Point(387, 106);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 24);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Level:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(387, 60);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 24);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Phone:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label12.Location = new System.Drawing.Point(387, 12);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 24);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Birth:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.Location = new System.Drawing.Point(43, 249);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(88, 24);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Email:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label14.Location = new System.Drawing.Point(30, 202);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(101, 24);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Gender:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label15.Location = new System.Drawing.Point(4, 154);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(127, 24);
-            this.label15.TabIndex = 26;
-            this.label15.Text = "NickName:";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
-            // 
-            // Account
-            // 
-            this.Account.Location = new System.Drawing.Point(139, 60);
-            this.Account.Margin = new System.Windows.Forms.Padding(4);
-            this.Account.Name = "Account";
-            this.Account.Size = new System.Drawing.Size(227, 25);
-            this.Account.TabIndex = 1;
-            // 
-            // Password
-            // 
-            this.Password.Location = new System.Drawing.Point(139, 105);
-            this.Password.Margin = new System.Windows.Forms.Padding(4);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(227, 25);
-            this.Password.TabIndex = 2;
-            // 
-            // NickName
-            // 
-            this.NickName.Location = new System.Drawing.Point(139, 150);
-            this.NickName.Margin = new System.Windows.Forms.Padding(4);
-            this.NickName.Name = "NickName";
-            this.NickName.Size = new System.Drawing.Size(227, 25);
-            this.NickName.TabIndex = 29;
-            // 
-            // Gender
-            // 
-            this.Gender.Location = new System.Drawing.Point(139, 201);
-            this.Gender.Margin = new System.Windows.Forms.Padding(4);
-            this.Gender.Name = "Gender";
-            this.Gender.Size = new System.Drawing.Size(227, 25);
-            this.Gender.TabIndex = 30;
-            // 
-            // Email
-            // 
-            this.Email.Location = new System.Drawing.Point(139, 248);
-            this.Email.Margin = new System.Windows.Forms.Padding(4);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(227, 25);
-            this.Email.TabIndex = 31;
-            // 
-            // Birth
-            // 
-            this.Birth.Location = new System.Drawing.Point(483, 11);
-            this.Birth.Margin = new System.Windows.Forms.Padding(4);
-            this.Birth.Name = "Birth";
-            this.Birth.Size = new System.Drawing.Size(227, 25);
-            this.Birth.TabIndex = 32;
-            // 
-            // Phone
-            // 
-            this.Phone.Location = new System.Drawing.Point(483, 59);
-            this.Phone.Margin = new System.Windows.Forms.Padding(4);
-            this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(227, 25);
-            this.Phone.TabIndex = 33;
-            // 
-            // Level
-            // 
-            this.Level.Location = new System.Drawing.Point(483, 110);
-            this.Level.Margin = new System.Windows.Forms.Padding(4);
-            this.Level.Name = "Level";
-            this.Level.Size = new System.Drawing.Size(227, 25);
-            this.Level.TabIndex = 34;
-            // 
-            // Exp
-            // 
-            this.Exp.Location = new System.Drawing.Point(483, 158);
-            this.Exp.Margin = new System.Windows.Forms.Padding(4);
-            this.Exp.Name = "Exp";
-            this.Exp.Size = new System.Drawing.Size(227, 25);
-            this.Exp.TabIndex = 35;
-            // 
-            // Point
-            // 
-            this.Point.Location = new System.Drawing.Point(483, 206);
-            this.Point.Margin = new System.Windows.Forms.Padding(4);
-            this.Point.Name = "Point";
-            this.Point.Size = new System.Drawing.Size(227, 25);
-            this.Point.TabIndex = 36;
-            // 
-            // ACHVID
-            // 
-            this.ACHVID.Location = new System.Drawing.Point(483, 249);
-            this.ACHVID.Margin = new System.Windows.Forms.Padding(4);
-            this.ACHVID.Name = "ACHVID";
-            this.ACHVID.Size = new System.Drawing.Size(227, 25);
-            this.ACHVID.TabIndex = 37;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(823, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 24);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "MemberPIC:";
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button3.Location = new System.Drawing.Point(642, 71);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(108, 28);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "更換會員圖";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(970, 15);
+            this.pictureBox2.Location = new System.Drawing.Point(739, 11);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(301, 304);
+            this.pictureBox2.Size = new System.Drawing.Size(217, 232);
             this.pictureBox2.TabIndex = 39;
             this.pictureBox2.TabStop = false;
             // 
@@ -696,18 +446,272 @@ namespace DrinkAge_1._0
             this.TBpanel.Controls.Add(this.Password);
             this.TBpanel.Controls.Add(this.label15);
             this.TBpanel.Controls.Add(this.Account);
-            this.TBpanel.Location = new System.Drawing.Point(4, 3);
+            this.TBpanel.Location = new System.Drawing.Point(3, 2);
+            this.TBpanel.Margin = new System.Windows.Forms.Padding(2);
             this.TBpanel.Name = "TBpanel";
-            this.TBpanel.Size = new System.Drawing.Size(723, 321);
+            this.TBpanel.Size = new System.Drawing.Size(558, 255);
             this.TBpanel.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(3, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 19);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "MemberID:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(3, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 19);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Password:";
+            // 
+            // MemberID
+            // 
+            this.MemberID.Location = new System.Drawing.Point(113, 9);
+            this.MemberID.Name = "MemberID";
+            this.MemberID.Size = new System.Drawing.Size(171, 22);
+            this.MemberID.TabIndex = 0;
+            // 
+            // ACHVID
+            // 
+            this.ACHVID.Location = new System.Drawing.Point(384, 201);
+            this.ACHVID.Name = "ACHVID";
+            this.ACHVID.Size = new System.Drawing.Size(171, 22);
+            this.ACHVID.TabIndex = 37;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.Location = new System.Drawing.Point(13, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 19);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Account:";
+            // 
+            // Point
+            // 
+            this.Point.Location = new System.Drawing.Point(384, 164);
+            this.Point.Name = "Point";
+            this.Point.Size = new System.Drawing.Size(171, 22);
+            this.Point.TabIndex = 36;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label7.Location = new System.Drawing.Point(290, 199);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 19);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "ACHVID:";
+            // 
+            // Exp
+            // 
+            this.Exp.Location = new System.Drawing.Point(384, 125);
+            this.Exp.Name = "Exp";
+            this.Exp.Size = new System.Drawing.Size(171, 22);
+            this.Exp.TabIndex = 35;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.Location = new System.Drawing.Point(303, 161);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 19);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Point:";
+            // 
+            // Level
+            // 
+            this.Level.Location = new System.Drawing.Point(384, 87);
+            this.Level.Name = "Level";
+            this.Level.Size = new System.Drawing.Size(171, 22);
+            this.Level.TabIndex = 34;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.Location = new System.Drawing.Point(325, 123);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 19);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Exp:";
+            // 
+            // Phone
+            // 
+            this.Phone.Location = new System.Drawing.Point(384, 48);
+            this.Phone.Name = "Phone";
+            this.Phone.Size = new System.Drawing.Size(171, 22);
+            this.Phone.TabIndex = 33;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label10.Location = new System.Drawing.Point(303, 85);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 19);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Level:";
+            // 
+            // Birth
+            // 
+            this.Birth.Location = new System.Drawing.Point(384, 9);
+            this.Birth.Name = "Birth";
+            this.Birth.Size = new System.Drawing.Size(171, 22);
+            this.Birth.TabIndex = 32;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.Location = new System.Drawing.Point(303, 48);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 19);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Phone:";
+            // 
+            // Email
+            // 
+            this.Email.Location = new System.Drawing.Point(113, 199);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(171, 22);
+            this.Email.TabIndex = 31;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label12.Location = new System.Drawing.Point(303, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 19);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Birth:";
+            // 
+            // Gender
+            // 
+            this.Gender.Location = new System.Drawing.Point(113, 161);
+            this.Gender.Name = "Gender";
+            this.Gender.Size = new System.Drawing.Size(171, 22);
+            this.Gender.TabIndex = 30;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label13.Location = new System.Drawing.Point(32, 199);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 19);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Email:";
+            // 
+            // NickName
+            // 
+            this.NickName.Location = new System.Drawing.Point(113, 120);
+            this.NickName.Name = "NickName";
+            this.NickName.Size = new System.Drawing.Size(171, 22);
+            this.NickName.TabIndex = 29;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label14.Location = new System.Drawing.Point(22, 162);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(86, 19);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Gender:";
+            // 
+            // Password
+            // 
+            this.Password.Location = new System.Drawing.Point(113, 85);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(171, 22);
+            this.Password.TabIndex = 2;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label15.Location = new System.Drawing.Point(3, 123);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(108, 19);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "NickName:";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // Account
+            // 
+            this.Account.Location = new System.Drawing.Point(113, 48);
+            this.Account.Name = "Account";
+            this.Account.Size = new System.Drawing.Size(171, 22);
+            this.Account.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(617, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 19);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "MemberPIC:";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(971, 664);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button4.Location = new System.Drawing.Point(859, 71);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(97, 28);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "變更資料";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button5.Location = new System.Drawing.Point(859, 36);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(97, 28);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "停用會員";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // LangCotrol
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1544, 869);
+            this.ClientSize = new System.Drawing.Size(1158, 695);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LangCotrol";
             this.Text = "LangCotrol";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -735,10 +739,10 @@ namespace DrinkAge_1._0
             this.splitContainer4.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.TBpanel.ResumeLayout(false);
             this.TBpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -785,7 +789,6 @@ namespace DrinkAge_1._0
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ACHVID;
         private System.Windows.Forms.TextBox Point;
@@ -796,5 +799,9 @@ namespace DrinkAge_1._0
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.TextBox Gender;
         private System.Windows.Forms.Panel TBpanel;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

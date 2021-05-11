@@ -25,7 +25,7 @@ namespace DrinkAge_1._0.ClassOfConsole
             return Comvle;
         }
 
-        internal Dictionary<string, string> DataRowstoValue(object sender, DataGridViewCellEventArgs o)
+        internal Dictionary<string, string> DataRowstoValue(object sender)
         {
             DataGridView Row = sender as DataGridView;
             Dictionary<string,string> MemRowisValue = new Dictionary<string, string>();

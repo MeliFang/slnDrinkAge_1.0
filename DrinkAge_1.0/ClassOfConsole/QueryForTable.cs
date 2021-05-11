@@ -28,7 +28,7 @@ namespace DrinkAge_1._0.ClassOfConsole
                            Email = x.Email, 
                            Birth = x.Birth, 
                            Phone = x.Phone, 
-                           evel = x.Level, 
+                           Level = x.Level, 
                            Exp = x.Exp, 
                            Point = x.Point, 
                            ACHVID = x.ACHVID };
@@ -46,7 +46,7 @@ namespace DrinkAge_1._0.ClassOfConsole
                     _DIC_AnyTypeForQuery.Add(ComText[i], $"M{i}");
                 }
             }
-            if (true == _DIC_AnyTypeForQuery.ContainsKey(Condition))
+            if (_DIC_AnyTypeForQuery.ContainsKey(Condition))
             {
 
                 if (_DIC_AnyTypeForQuery[Condition] == "M0")
