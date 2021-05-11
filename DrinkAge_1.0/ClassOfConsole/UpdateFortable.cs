@@ -10,27 +10,23 @@ namespace DrinkAge_1._0.ClassOfConsole
     class UpdateFortable
     {
         DrinkAgeEntities dbContext = new DrinkAgeEntities();
-        Dictionary<string, string> _Dic_AnyTypeForUpdate = new Dictionary<string, string>();
-        List<string> User_com_value;
-        internal void MemUpdate(string value,string Column,int index)
+        internal void MemUpdate(Dictionary<string, string> MemCGV,int index)
         {
-            if (User_com_value == null)
-            {
-                
-            }
-            Member Mem = (from m in dbContext.Members
-                          where m.MemberID == index + 1
-                          select m).FirstOrDefault();
-            if (Mem == null)
-            {
-                return;
-            }
-            else
-            {
-                
-                Mem.Account = value;
-                dbContext.SaveChanges();
-            }
+
+            //var Mem = from m in dbContext.Members.
+            //          where m.MemberID==1
+            //          select m;
+
+
+            //if (Mem == null)
+            //{
+            //    return;
+            //}
+            //else
+            //{
+            //    Mem.Account = value;
+            //    dbContext.SaveChanges();
+            //}
 
         }
     }

@@ -24,7 +24,6 @@ namespace DrinkAge_1._0.ClassOfConsole
             Comvle = Com;
             return Comvle;
         }
-
         internal Dictionary<string, string> DataRowstoValue(object sender)
         {
             DataGridView Row = sender as DataGridView;

@@ -1,6 +1,7 @@
 ﻿using DrinkAge_1._0.ClassOfConsole;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,12 +12,14 @@ namespace DrinkAge_1._0
         QueryForTable QueryTowhere;
         DataGridviewQuery DataGQ;
         UpdateFortable UpForTa;
+        ValueUpadateForGridView VudForGrid;
         public LangCotrol()
         {
             InitializeComponent();
             DataGQ = new DataGridviewQuery();
             QueryTowhere = new QueryForTable();
             UpForTa = new UpdateFortable();
+            VudForGrid = new ValueUpadateForGridView();
 
         }
 
@@ -137,8 +140,33 @@ namespace DrinkAge_1._0
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Switch=1;
-            dataGridViewtopanel();
+            Dictionary<string, string> MemRVCG = new Dictionary<string, string>();
+            int i = dataGridView1.CurrentCell.RowIndex;
+            int MemID = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
+            foreach (var x in TBpanel.Controls)
+            {
+                if (x.GetType() == typeof(TextBox))
+                {
+                    if (MemisRV.ContainsKey((x as TextBox).Name))
+                    {
+                        if ((x as TextBox).Text != MemisRV[(x as TextBox).Name])
+                        {
+                            MemRVCG.Add((x as TextBox).Name, (x as TextBox).Text);
+                        }
+                    }
+                }
+            }
+            //int i = dataGridView1.CurrentCell.RowIndex;
+            //for (int x = 0; dataGridView1.Columns.Count > x; x++)
+            //{
+            //    if (dataGridView1.Columns[x].HeaderText == MemRVCG.ContainsKey(dataGridView1.Columns[x].HeaderText).ToString())
+            //    {
+            //        if ((dataGridView1.Rows[i].Cells[x].Value).ToString() != (MemRVCG[dataGridView1.Columns[x].HeaderText]))
+            //        {
+            //            dataGridView1.Rows[i].Cells[x].Style.BackColor = Color.Orange;
+            //        }
+            //    }
+            //}
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -146,34 +174,17 @@ namespace DrinkAge_1._0
             MemisRV = DataGQ.DataRowstoValue(sender);
             dataGridViewtopanel();
         }
-        int Switch { get; set; }
+        Dictionary<string, string> MemRVCGtoM;
         private void dataGridViewtopanel()
         {
-            Dictionary<string, string> MemRVCG = new Dictionary<string, string>();
             foreach (var x in TBpanel.Controls)
             {
                 if (x.GetType() == typeof(TextBox))
                 {
-                    if (Switch == 0)
+                    if (MemisRV.ContainsKey((x as TextBox).Name))
                     {
-                        if (MemisRV.ContainsKey((x as TextBox).Name))
-                        {
-                            (x as TextBox).Text = MemisRV[(x as TextBox).Name];
-                        }
+                        (x as TextBox).Text = MemisRV[(x as TextBox).Name];
                     }
-                    else
-                    {
-                        if (MemisRV.ContainsKey((x as TextBox).Name))
-                        {
-                            if ((x as TextBox).Text != MemisRV[(x as TextBox).Name])
-                            {
-                                MemRVCG.Add((x as TextBox).Name, (x as TextBox).Text);
-                            }
-
-                        }
-                    }
-                    
-
                 }
             }
         }
