@@ -73,6 +73,9 @@
     <Compile Include="Comment.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CommentDetail.cs">
+      <DependentUpon>da_DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="da_DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,6 +104,12 @@
     </Compile>
     <Compile Include="FavoriteStore.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormLiang1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLiang1.Designer.cs">
+      <DependentUpon>FormLiang1.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSearch_Fang.cs">
       <SubType>Form</SubType>
@@ -173,6 +182,9 @@
     <Compile Include="Test1.Designer.cs">
       <DependentUpon>Test1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormLiang1.resx">
+      <DependentUpon>FormLiang1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSearch_Fang.resx">
       <DependentUpon>FrmSearch_Fang.cs</DependentUpon>
     </EmbeddedResource>
