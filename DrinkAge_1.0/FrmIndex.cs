@@ -23,6 +23,7 @@ namespace DrinkAge_1._0
         {
             FrmLuck f = new FrmLuck();
             f.Show();
+            MessageBox.Show("");
         }
 
         private void FrmIndex_Load(object sender, EventArgs e)
