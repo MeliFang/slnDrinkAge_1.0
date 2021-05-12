@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrinkAge.會員;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,13 +17,10 @@ namespace DrinkAge_1._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LangCotrol());//彥的測試啟動頁
+            //Application.Run(new LangCotrol());//彥的測試啟動頁
 
-<<<<<<< Updated upstream
-            //Application.Run(new FrmSearch_Fang());  //坊的測試啟動頁
-=======
             Application.Run(new FrmSearch_Fang());  //坊的測試啟動頁
->>>>>>> Stashed changes
+
         }
     }
 }
