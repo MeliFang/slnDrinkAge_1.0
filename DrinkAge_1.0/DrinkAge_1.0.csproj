@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -211,7 +212,6 @@
     <EmbeddedResource Include="FrmLuck.resx">
       <DependentUpon>FrmLuck.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="FrmSearch_Fang.resx">
       <DependentUpon>FrmSearch_Fang.cs</DependentUpon>
     </EmbeddedResource>

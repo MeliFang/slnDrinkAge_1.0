@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrinkAge.會員;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,19 +57,10 @@ namespace DrinkAge_1._0
 
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void btnMemberLogon_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
+            member01 f = new member01();
+            f.Show();
         }
     }
 }

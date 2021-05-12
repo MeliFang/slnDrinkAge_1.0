@@ -116,14 +116,14 @@ namespace DrinkAge_1._0
             // btnClearData
             // 
 
-            this.btnLoadData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnLoadData.Location = new System.Drawing.Point(196, 13);
-            this.btnLoadData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLoadData.Name = "btnLoadData";
-            this.btnLoadData.Size = new System.Drawing.Size(117, 56);
-            this.btnLoadData.TabIndex = 22;
-            this.btnLoadData.Text = "Load Data";
-            this.btnLoadData.UseVisualStyleBackColor = false;
+            //this.btnLoadData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            //this.btnLoadData.Location = new System.Drawing.Point(196, 13);
+            //this.btnLoadData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            //this.btnLoadData.Name = "btnLoadData";
+            //this.btnLoadData.Size = new System.Drawing.Size(117, 56);
+            //this.btnLoadData.TabIndex = 22;
+            //this.btnLoadData.Text = "Load Data";
+            //this.btnLoadData.UseVisualStyleBackColor = false;
             
 
             this.btnClearData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
