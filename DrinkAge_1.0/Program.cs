@@ -19,7 +19,7 @@ namespace DrinkAge_1._0
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LangCotrol());
 
-            Application.Run(new member01());  //坊的測試啟動頁
+            Application.Run(new FrmIndex());  //潔的測試啟動頁
         }
     }
 }

@@ -103,6 +103,18 @@
     <Compile Include="FavoriteStore.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FrmIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIndex.Designer.cs">
+      <DependentUpon>FrmIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLuck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLuck.Designer.cs">
+      <DependentUpon>FrmLuck.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSearch_Fang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +206,12 @@
     </Compile>
     <Compile Include="會員\modes\CViewBag.cs" />
     <Compile Include="會員\modes\CViewid.cs" />
+    <EmbeddedResource Include="FrmIndex.resx">
+      <DependentUpon>FrmIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLuck.resx">
+      <DependentUpon>FrmLuck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSearch_Fang.resx">
       <DependentUpon>FrmSearch_Fang.cs</DependentUpon>
     </EmbeddedResource>
