@@ -74,6 +74,9 @@
     <Compile Include="Comment.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CommentDetail.cs">
+      <DependentUpon>da_DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="da_DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,17 +106,13 @@
     <Compile Include="FavoriteStore.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FrmIndex.cs">
+
+    <Compile Include="FormLiang1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmIndex.Designer.cs">
-      <DependentUpon>FrmIndex.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmLuck.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLuck.Designer.cs">
-      <DependentUpon>FrmLuck.cs</DependentUpon>
+    <Compile Include="FormLiang1.Designer.cs">
+      <DependentUpon>FormLiang1.cs</DependentUpon>
+
     </Compile>
     <Compile Include="FrmSearch_Fang.cs">
       <SubType>Form</SubType>
@@ -186,31 +185,9 @@
     <Compile Include="Test1.Designer.cs">
       <DependentUpon>Test1.cs</DependentUpon>
     </Compile>
-    <Compile Include="會員\member01.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="會員\member01.designer.cs">
-      <DependentUpon>member01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="會員\member02.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="會員\member02.designer.cs">
-      <DependentUpon>member02.cs</DependentUpon>
-    </Compile>
-    <Compile Include="會員\member03.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="會員\member03.designer.cs">
-      <DependentUpon>member03.cs</DependentUpon>
-    </Compile>
-    <Compile Include="會員\modes\CViewBag.cs" />
-    <Compile Include="會員\modes\CViewid.cs" />
-    <EmbeddedResource Include="FrmIndex.resx">
-      <DependentUpon>FrmIndex.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmLuck.resx">
-      <DependentUpon>FrmLuck.cs</DependentUpon>
+
+    <EmbeddedResource Include="FormLiang1.resx">
+      <DependentUpon>FormLiang1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSearch_Fang.resx">
       <DependentUpon>FrmSearch_Fang.cs</DependentUpon>

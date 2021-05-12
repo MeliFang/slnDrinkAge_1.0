@@ -50,5 +50,6 @@ namespace DrinkAge_1._0
         public virtual DbSet<Sugar> Sugars { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Temperature> Temperatures { get; set; }
+        public virtual DbSet<CommentDetail> CommentDetails { get; set; }
     }
 }

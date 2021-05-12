@@ -14,12 +14,24 @@ namespace DrinkAge_1._0
     
     public partial class Comment
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Comment()
+        {
+            this.CommentDetails = new HashSet<CommentDetail>();
+        }
+    
         public int CommentID { get; set; }
         public Nullable<int> ProductID { get; set; }
         public string Comment1 { get; set; }
         public Nullable<int> Star { get; set; }
         public Nullable<int> GP_Quantity { get; set; }
+        public Nullable<int> BP_Quantity { get; set; }
+        public Nullable<int> MemberID { get; set; }
+        public byte[] CommentPicture { get; set; }
+        public Nullable<bool> Display { get; set; }
     
         public virtual Product Product { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CommentDetail> CommentDetails { get; set; }
     }
 }
