@@ -44,7 +44,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -174,26 +173,6 @@
     <Compile Include="Test1.Designer.cs">
       <DependentUpon>Test1.cs</DependentUpon>
     </Compile>
-    <Compile Include="會員\member01.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="會員\member01.designer.cs">
-      <DependentUpon>member01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="會員\member02.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="會員\member02.designer.cs">
-      <DependentUpon>member02.cs</DependentUpon>
-    </Compile>
-    <Compile Include="會員\member03.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="會員\member03.designer.cs">
-      <DependentUpon>member03.cs</DependentUpon>
-    </Compile>
-    <Compile Include="會員\modes\CViewBag.cs" />
-    <Compile Include="會員\modes\CViewid.cs" />
     <EmbeddedResource Include="FrmSearch_Fang.resx">
       <DependentUpon>FrmSearch_Fang.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,19 +187,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Test1.resx">
       <DependentUpon>Test1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="會員\member01.resx">
-      <DependentUpon>member01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="會員\member02.resx">
-      <DependentUpon>member02.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="會員\member03.resx">
-      <DependentUpon>member03.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="da_DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -266,10 +235,6 @@
       <LastGenOutput>da_DataModel.cs</LastGenOutput>
     </Content>
     <Content Include="image\gura.png" />
-    <Content Include="會員\testimg\adv01.png" />
-    <Content Include="會員\testimg\adv02.png" />
-    <Content Include="會員\testimg\adv03.png" />
-    <Content Include="會員\testimg\問號.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
