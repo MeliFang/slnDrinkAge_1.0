@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +73,9 @@
     <Compile Include="ClassOfConsole\QueryForTable.cs" />
     <Compile Include="Comment.cs">
       <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommentDetail.cs">
+      <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="da_DataModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -116,6 +120,14 @@
     </Compile>
     <Compile Include="FavoriteStore.cs">
       <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
+    </Compile>
+
+    <Compile Include="FormLiang1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLiang1.Designer.cs">
+      <DependentUpon>FormLiang1.cs</DependentUpon>
+
     </Compile>
     <Compile Include="FrmSearch_Fang.cs">
       <SubType>Form</SubType>
@@ -194,6 +206,10 @@
     <Compile Include="Test1.Designer.cs">
       <DependentUpon>Test1.cs</DependentUpon>
     </Compile>
+
+    <EmbeddedResource Include="FormLiang1.resx">
+      <DependentUpon>FormLiang1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSearch_Fang.resx">
       <DependentUpon>FrmSearch_Fang.cs</DependentUpon>
     </EmbeddedResource>
