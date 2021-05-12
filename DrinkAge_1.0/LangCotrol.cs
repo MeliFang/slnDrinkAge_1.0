@@ -12,14 +12,12 @@ namespace DrinkAge_1._0
         QueryForTable QueryTowhere;
         DataGridviewQuery DataGQ;
         UpdateFortable UpForTa;
-        ValueUpadateForGridView VudForGrid;
         public LangCotrol()
         {
             InitializeComponent();
             DataGQ = new DataGridviewQuery();
             QueryTowhere = new QueryForTable();
             UpForTa = new UpdateFortable();
-            VudForGrid = new ValueUpadateForGridView();
 
         }
 
@@ -27,11 +25,10 @@ namespace DrinkAge_1._0
         {
 
         }
-        IQueryable<Member> Mem;
         List<string> combo;
         private void button1_Click(object sender, EventArgs e)
         {
-            bindingSource1 = QueryTowhere.MemberQueryAll();
+            bindingSource1 = QueryTowhere.MemberQueryAllorcondition();
             bindingNavigator1.BindingSource = bindingSource1;
             dataGridView1.DataSource = bindingSource1;
             if(combo==null)
@@ -62,14 +59,13 @@ namespace DrinkAge_1._0
             }
             else
             {
-                Mem = QueryTowhere.ConditionOfMember(combo,ComboboxCondT.Text,TextboxCondValue.Text);
-                if (Mem == null || Mem.ToList().Count() == 0)
+                bindingSource1 = QueryTowhere.ConditionOfMember(combo,ComboboxCondT.Text,TextboxCondValue.Text);
+                if (bindingSource1 == null)
                 {
                     MessageBox.Show("查無此資料");
                 }
                 else
                 {
-                    bindingSource1.DataSource = Mem.ToList();
                     bindingNavigator1.BindingSource = bindingSource1;
                     dataGridView1.DataSource = bindingSource1;
                 }
@@ -84,13 +80,6 @@ namespace DrinkAge_1._0
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //TBCT = TxTBMemID.Text;
-            //UpForTa.MemUpdate(TBCT, DGVC, bindingSource1.Position);
-            //Mem = QueryTowhere.ConditionOfMember(combo, ComboboxCondT.Text, TextboxCondValue.Text);
-            //bindingSource1.DataSource = Mem.ToList();
-            //bindingNavigator1.BindingSource = bindingSource1;
-            //dataGridView1.DataSource = bindingSource1;
-            //TxTBMemID.Text = "";
 
         }
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -156,17 +145,10 @@ namespace DrinkAge_1._0
                     }
                 }
             }
-            //int i = dataGridView1.CurrentCell.RowIndex;
-            //for (int x = 0; dataGridView1.Columns.Count > x; x++)
-            //{
-            //    if (dataGridView1.Columns[x].HeaderText == MemRVCG.ContainsKey(dataGridView1.Columns[x].HeaderText).ToString())
-            //    {
-            //        if ((dataGridView1.Rows[i].Cells[x].Value).ToString() != (MemRVCG[dataGridView1.Columns[x].HeaderText]))
-            //        {
-            //            dataGridView1.Rows[i].Cells[x].Style.BackColor = Color.Orange;
-            //        }
-            //    }
-            //}
+            UpForTa.MemUpdate(MemRVCG, MemID);
+            bindingSource1 = QueryTowhere.MemberQueryAllorcondition(MemID);
+            bindingNavigator1.BindingSource = bindingSource1;
+            dataGridView1.DataSource = bindingSource1;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -174,7 +156,6 @@ namespace DrinkAge_1._0
             MemisRV = DataGQ.DataRowstoValue(sender);
             dataGridViewtopanel();
         }
-        Dictionary<string, string> MemRVCGtoM;
         private void dataGridViewtopanel()
         {
             foreach (var x in TBpanel.Controls)

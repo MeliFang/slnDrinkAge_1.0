@@ -70,7 +70,6 @@
     <Compile Include="ClassOfConsole\UpdateFortable.cs" />
     <Compile Include="ClassOfConsole\DataGridviewQuery.cs" />
     <Compile Include="ClassOfConsole\QueryForTable.cs" />
-    <Compile Include="ClassOfConsole\ValueUpadateForGridView.cs" />
     <Compile Include="Comment.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>

@@ -13,21 +13,43 @@ namespace DrinkAge_1._0.ClassOfConsole
         internal void MemUpdate(Dictionary<string, string> MemCGV,int index)
         {
 
-            //var Mem = from m in dbContext.Members.
-            //          where m.MemberID==1
-            //          select m;
+            Member Mem = (from m in dbContext.Members
+                      where m.MemberID == index
+                      select m).FirstOrDefault();
+            PropertyInfo[] MemProperty = Mem.GetType().GetProperties();
+            for (int i = 0; MemProperty.Count() > i; i++)
+            {
 
-
-            //if (Mem == null)
-            //{
-            //    return;
-            //}
-            //else
-            //{
-            //    Mem.Account = value;
-            //    dbContext.SaveChanges();
-            //}
-
+                if (MemCGV.ContainsKey(MemProperty[i].Name.ToString()))
+                {
+                    if (Mem.GetType().GetProperty(MemProperty[i].Name).PropertyType.Name == "String")
+                    {
+                        Mem.GetType().GetProperty(MemProperty[i].Name).SetValue(Mem, MemCGV[MemProperty[i].Name], null);
+                    }
+                    else
+                    {
+                        switch(MemProperty[i].Name)
+                        {
+                            case "Level":
+                                Mem.GetType().GetProperty(MemProperty[i].Name).SetValue(Mem, int.Parse(MemCGV[MemProperty[i].Name]), null);
+                                break;
+                            case "Exp":
+                                Mem.GetType().GetProperty(MemProperty[i].Name).SetValue(Mem, int.Parse(MemCGV[MemProperty[i].Name]), null);
+                                break;
+                            case "Point":
+                                Mem.GetType().GetProperty(MemProperty[i].Name).SetValue(Mem, int.Parse(MemCGV[MemProperty[i].Name]), null);
+                                break;
+                            case "ACHVID":
+                                Mem.GetType().GetProperty(MemProperty[i].Name).SetValue(Mem, int.Parse(MemCGV[MemProperty[i].Name]), null);
+                                break;
+                            case "Birth":
+                                Mem.GetType().GetProperty(MemProperty[i].Name).SetValue(Mem, Convert.ToDateTime(MemCGV[MemProperty[i].Name]), null);
+                                break;
+                        }
+                    } 
+                }
+            }
+            dbContext.SaveChanges();
         }
     }
 }

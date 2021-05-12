@@ -12,11 +12,25 @@ namespace DrinkAge_1._0.ClassOfConsole
         internal List<string> Comvle;
         internal List<string> DGColumntoCom(object sender)
         {
+            List<string> comparison = new List<string>() { "Password", "MemberPIC", "Exp", "Point" };
             List<string> Com = new List<string>();
             DataGridView Header = sender as DataGridView;
+            bool difference = true;
             for (int i = 0; i < Header.ColumnCount; i++)
             {
-                if (Header.Columns[i].HeaderText != "MemberPIC")
+                foreach (var j in comparison)
+                {
+                    if (Header.Columns[i].HeaderText == j)
+                    {
+                        difference = false;
+                        break;
+                    }
+                    else
+                    {
+                        difference = true;
+                    }
+                }
+                if (difference)
                 {
                     Com.Add(Header.Columns[i].HeaderText);
                 }
@@ -26,15 +40,28 @@ namespace DrinkAge_1._0.ClassOfConsole
         }
         internal Dictionary<string, string> DataRowstoValue(object sender)
         {
+            List<string> comparison = new List<string>() {"MemberID","Password","MemberPIC"};
             DataGridView Row = sender as DataGridView;
             Dictionary<string,string> MemRowisValue = new Dictionary<string, string>();
             int i = Row.CurrentCell.RowIndex;
+            bool difference=true;
             for (int x = 0; Row.Columns.Count > x; x++)
             {
-                if (Row.Columns[x].HeaderText != "MemberPIC")
+                foreach (var j in comparison)
                 {
-                    MemRowisValue.Add(Row.Columns[x].HeaderText, Row.Rows[i].Cells[x].Value.ToString());
+                    if (Row.Columns[x].HeaderText == j)
+                    {
+                        difference = false;
+                        break;
+                    }
+                    else
+                    {
+                        difference = true;
+                    }
+                        
                 }
+                if (difference)
+                    MemRowisValue.Add(Row.Columns[x].HeaderText, Row.Rows[i].Cells[x].Value.ToString());
             }
             return MemRowisValue;
         }

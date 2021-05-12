@@ -15,7 +15,7 @@ namespace DrinkAge_1._0.ClassOfConsole
         List<string> ComText;
         IQueryable<Member> Member;
 
-        internal BindingSource MemberQueryAll()
+        internal BindingSource MemberQueryAllorcondition()
         {
             var NMem = from x in dbContext.Members
                        select new { 
@@ -36,7 +36,31 @@ namespace DrinkAge_1._0.ClassOfConsole
             BSMem.DataSource = NMem.ToList();
             return BSMem;
         }
-        internal IQueryable<Member> ConditionOfMember(List<string> Comvle,string Condition,string userValue)
+        internal BindingSource MemberQueryAllorcondition(int index)
+        {
+            var NMem = from x in dbContext.Members
+                       where x.MemberID==index
+                       select new
+                       {
+                           MemberID = x.MemberID,
+                           Account = x.Account,
+                           Password = x.Password,
+                           MemberPIC = x.MemberPIC,
+                           NickName = x.NickName,
+                           Gender = x.Gender,
+                           Email = x.Email,
+                           Birth = x.Birth,
+                           Phone = x.Phone,
+                           Level = x.Level,
+                           Exp = x.Exp,
+                           Point = x.Point,
+                           ACHVID = x.ACHVID
+                       };
+            BindingSource BSMem = new BindingSource();
+            BSMem.DataSource = NMem.ToList();
+            return BSMem;
+        }
+        internal BindingSource ConditionOfMember(List<string> Comvle,string Condition,string userValue)
         {
             if (ComText==null)
             {
@@ -126,9 +150,27 @@ namespace DrinkAge_1._0.ClassOfConsole
                     return null;
                 }
 
-
             }
-            return Member;
+            var NMem = from x in Member
+                       select new
+                       {
+                           MemberID = x.MemberID,
+                           Account = x.Account,
+                           Password = x.Password,
+                           MemberPIC = x.MemberPIC,
+                           NickName = x.NickName,
+                           Gender = x.Gender,
+                           Email = x.Email,
+                           Birth = x.Birth,
+                           Phone = x.Phone,
+                           Level = x.Level,
+                           Exp = x.Exp,
+                           Point = x.Point,
+                           ACHVID = x.ACHVID
+                       };
+            BindingSource BSMem = new BindingSource();
+            BSMem.DataSource = NMem.ToList();
+            return BSMem;
         }
         
     }

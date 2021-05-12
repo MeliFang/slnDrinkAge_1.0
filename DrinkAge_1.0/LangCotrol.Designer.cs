@@ -54,12 +54,11 @@ namespace DrinkAge_1._0
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TBpanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.MemberID = new System.Windows.Forms.TextBox();
             this.ACHVID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Point = new System.Windows.Forms.TextBox();
@@ -78,14 +77,11 @@ namespace DrinkAge_1._0
             this.label13 = new System.Windows.Forms.Label();
             this.NickName = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.Password = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.Account = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -170,11 +166,11 @@ namespace DrinkAge_1._0
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(756, 70);
+            this.button1.Location = new System.Drawing.Point(734, 71);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 28);
             this.button1.TabIndex = 6;
-            this.button1.Text = "儲存更改";
+            this.button1.Text = "儲存圖片";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -395,12 +391,37 @@ namespace DrinkAge_1._0
             this.splitContainer4.SplitterDistance = 106;
             this.splitContainer4.TabIndex = 7;
             // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button5.Location = new System.Drawing.Point(859, 36);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(97, 28);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "停用會員";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button4.Location = new System.Drawing.Point(837, 71);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(119, 28);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "儲存變更資料";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.Location = new System.Drawing.Point(642, 71);
+            this.button3.Location = new System.Drawing.Point(620, 71);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 28);
             this.button3.TabIndex = 7;
@@ -422,9 +443,6 @@ namespace DrinkAge_1._0
             // 
             this.TBpanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.TBpanel.Controls.Add(this.label2);
-            this.TBpanel.Controls.Add(this.label3);
-            this.TBpanel.Controls.Add(this.MemberID);
             this.TBpanel.Controls.Add(this.ACHVID);
             this.TBpanel.Controls.Add(this.label4);
             this.TBpanel.Controls.Add(this.Point);
@@ -443,7 +461,6 @@ namespace DrinkAge_1._0
             this.TBpanel.Controls.Add(this.label13);
             this.TBpanel.Controls.Add(this.NickName);
             this.TBpanel.Controls.Add(this.label14);
-            this.TBpanel.Controls.Add(this.Password);
             this.TBpanel.Controls.Add(this.label15);
             this.TBpanel.Controls.Add(this.Account);
             this.TBpanel.Location = new System.Drawing.Point(3, 2);
@@ -452,36 +469,9 @@ namespace DrinkAge_1._0
             this.TBpanel.Size = new System.Drawing.Size(558, 255);
             this.TBpanel.TabIndex = 7;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(3, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 19);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "MemberID:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(3, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 19);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Password:";
-            // 
-            // MemberID
-            // 
-            this.MemberID.Location = new System.Drawing.Point(113, 9);
-            this.MemberID.Name = "MemberID";
-            this.MemberID.Size = new System.Drawing.Size(171, 22);
-            this.MemberID.TabIndex = 0;
-            // 
             // ACHVID
             // 
-            this.ACHVID.Location = new System.Drawing.Point(384, 201);
+            this.ACHVID.Location = new System.Drawing.Point(384, 208);
             this.ACHVID.Name = "ACHVID";
             this.ACHVID.Size = new System.Drawing.Size(171, 22);
             this.ACHVID.TabIndex = 37;
@@ -490,7 +480,7 @@ namespace DrinkAge_1._0
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(13, 48);
+            this.label4.Location = new System.Drawing.Point(11, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 19);
             this.label4.TabIndex = 15;
@@ -498,7 +488,7 @@ namespace DrinkAge_1._0
             // 
             // Point
             // 
-            this.Point.Location = new System.Drawing.Point(384, 164);
+            this.Point.Location = new System.Drawing.Point(114, 208);
             this.Point.Name = "Point";
             this.Point.Size = new System.Drawing.Size(171, 22);
             this.Point.TabIndex = 36;
@@ -507,7 +497,7 @@ namespace DrinkAge_1._0
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(290, 199);
+            this.label7.Location = new System.Drawing.Point(295, 206);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 19);
             this.label7.TabIndex = 18;
@@ -515,7 +505,7 @@ namespace DrinkAge_1._0
             // 
             // Exp
             // 
-            this.Exp.Location = new System.Drawing.Point(384, 125);
+            this.Exp.Location = new System.Drawing.Point(384, 159);
             this.Exp.Name = "Exp";
             this.Exp.Size = new System.Drawing.Size(171, 22);
             this.Exp.TabIndex = 35;
@@ -524,7 +514,7 @@ namespace DrinkAge_1._0
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(303, 161);
+            this.label8.Location = new System.Drawing.Point(36, 206);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 19);
             this.label8.TabIndex = 19;
@@ -532,7 +522,7 @@ namespace DrinkAge_1._0
             // 
             // Level
             // 
-            this.Level.Location = new System.Drawing.Point(384, 87);
+            this.Level.Location = new System.Drawing.Point(384, 112);
             this.Level.Name = "Level";
             this.Level.Size = new System.Drawing.Size(171, 22);
             this.Level.TabIndex = 34;
@@ -541,7 +531,7 @@ namespace DrinkAge_1._0
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(325, 123);
+            this.label9.Location = new System.Drawing.Point(325, 162);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 19);
             this.label9.TabIndex = 20;
@@ -549,7 +539,7 @@ namespace DrinkAge_1._0
             // 
             // Phone
             // 
-            this.Phone.Location = new System.Drawing.Point(384, 48);
+            this.Phone.Location = new System.Drawing.Point(384, 61);
             this.Phone.Name = "Phone";
             this.Phone.Size = new System.Drawing.Size(171, 22);
             this.Phone.TabIndex = 33;
@@ -558,7 +548,7 @@ namespace DrinkAge_1._0
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.Location = new System.Drawing.Point(303, 85);
+            this.label10.Location = new System.Drawing.Point(303, 110);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 19);
             this.label10.TabIndex = 21;
@@ -575,7 +565,7 @@ namespace DrinkAge_1._0
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(303, 48);
+            this.label11.Location = new System.Drawing.Point(303, 61);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 19);
             this.label11.TabIndex = 22;
@@ -583,7 +573,7 @@ namespace DrinkAge_1._0
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(113, 199);
+            this.Email.Location = new System.Drawing.Point(114, 159);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(171, 22);
             this.Email.TabIndex = 31;
@@ -600,7 +590,7 @@ namespace DrinkAge_1._0
             // 
             // Gender
             // 
-            this.Gender.Location = new System.Drawing.Point(113, 161);
+            this.Gender.Location = new System.Drawing.Point(114, 112);
             this.Gender.Name = "Gender";
             this.Gender.Size = new System.Drawing.Size(171, 22);
             this.Gender.TabIndex = 30;
@@ -609,7 +599,7 @@ namespace DrinkAge_1._0
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.Location = new System.Drawing.Point(32, 199);
+            this.label13.Location = new System.Drawing.Point(36, 162);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 19);
             this.label13.TabIndex = 24;
@@ -617,7 +607,7 @@ namespace DrinkAge_1._0
             // 
             // NickName
             // 
-            this.NickName.Location = new System.Drawing.Point(113, 120);
+            this.NickName.Location = new System.Drawing.Point(114, 63);
             this.NickName.Name = "NickName";
             this.NickName.Size = new System.Drawing.Size(171, 22);
             this.NickName.TabIndex = 29;
@@ -626,24 +616,17 @@ namespace DrinkAge_1._0
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label14.Location = new System.Drawing.Point(22, 162);
+            this.label14.Location = new System.Drawing.Point(25, 110);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 19);
             this.label14.TabIndex = 25;
             this.label14.Text = "Gender:";
             // 
-            // Password
-            // 
-            this.Password.Location = new System.Drawing.Point(113, 85);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(171, 22);
-            this.Password.TabIndex = 2;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label15.Location = new System.Drawing.Point(3, 123);
+            this.label15.Location = new System.Drawing.Point(3, 61);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(108, 19);
             this.label15.TabIndex = 26;
@@ -652,7 +635,7 @@ namespace DrinkAge_1._0
             // 
             // Account
             // 
-            this.Account.Location = new System.Drawing.Point(113, 48);
+            this.Account.Location = new System.Drawing.Point(114, 10);
             this.Account.Name = "Account";
             this.Account.Size = new System.Drawing.Size(171, 22);
             this.Account.TabIndex = 1;
@@ -680,31 +663,6 @@ namespace DrinkAge_1._0
             // bindingSource1
             // 
             this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button4.Location = new System.Drawing.Point(859, 71);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 28);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "變更資料";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button5.Location = new System.Drawing.Point(859, 36);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 28);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "停用會員";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // LangCotrol
             // 
@@ -773,11 +731,7 @@ namespace DrinkAge_1._0
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.TextBox MemberID;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox NickName;
-        private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.TextBox Account;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
