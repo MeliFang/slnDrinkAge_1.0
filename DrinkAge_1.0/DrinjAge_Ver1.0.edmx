@@ -1,0 +1,1889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DrinkAgeModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Achievements">
+          <Key>
+            <PropertyRef Name="ACHVID" />
+          </Key>
+          <Property Name="ACHVID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ACHVName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CategoryDetailID" Type="int" />
+          <Property Name="RegionID" Type="int" />
+          <Property Name="Point" Type="int" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="CategoryDetail">
+          <Key>
+            <PropertyRef Name="CategoryDetailID" />
+          </Key>
+          <Property Name="CategoryDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="CategoryDetailName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentID" />
+          </Key>
+          <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="Star" Type="int" />
+          <Property Name="GP_Quantity" Type="int" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeIDNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="HiredDate" Type="date" />
+        </EntityType>
+        <EntityType Name="FavoriteProducts">
+          <Key>
+            <PropertyRef Name="FavoriteProductID" />
+          </Key>
+          <Property Name="FavoriteProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="ProductID" Type="int" />
+        </EntityType>
+        <EntityType Name="FavoriteStore">
+          <Key>
+            <PropertyRef Name="FavoriteStoreID" />
+          </Key>
+          <Property Name="FavoriteStoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="StoreID" Type="int" />
+        </EntityType>
+        <EntityType Name="Ingredients">
+          <Key>
+            <PropertyRef Name="IngredientID" />
+          </Key>
+          <Property Name="IngredientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IngredientName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Account" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MemberPIC" Type="varbinary(max)" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Birth" Type="date" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Level" Type="int" />
+          <Property Name="Exp" Type="int" />
+          <Property Name="Point" Type="int" />
+          <Property Name="ACHVID" Type="int" />
+        </EntityType>
+        <EntityType Name="MemberACHV">
+          <Key>
+            <PropertyRef Name="MemberACHVID" />
+          </Key>
+          <Property Name="MemberACHVID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="ACHVID" Type="int" />
+        </EntityType>
+        <EntityType Name="MemPointDetails">
+          <Key>
+            <PropertyRef Name="MemPointDetail_ID" />
+          </Key>
+          <Property Name="MemPointDetail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="PointItemID" Type="int" />
+          <Property Name="Quanity" Type="int" />
+        </EntityType>
+        <EntityType Name="Order Details">
+          <Key>
+            <PropertyRef Name="OrderDetail_ID" />
+          </Key>
+          <Property Name="OrderDetail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="UnitPrice" Type="money" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="SizeID" Type="int" Nullable="false" />
+          <Property Name="SugarID" Type="int" Nullable="false" />
+          <Property Name="TemperatureID" Type="int" Nullable="false" />
+          <Property Name="IngredientID" Type="int" />
+          <Property Name="StoreDiscountID" Type="int" />
+          <Property Name="PointItemID" Type="int" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="StoreID" Type="int" Nullable="false" />
+          <Property Name="OrderDate" Type="date" Nullable="false" />
+          <Property Name="ArrivedDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Points Mall">
+          <Key>
+            <PropertyRef Name="PointItemID" />
+          </Key>
+          <Property Name="PointItemID" Type="int" Nullable="false" />
+          <Property Name="PointItemName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemPoint" Type="int" />
+          <Property Name="ItemPicture" Type="varbinary(max)" />
+          <Property Name="PointDiscountPrice" Type="money" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductPhoto" Type="varbinary(max)" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CategoryDetailID" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="StoreID" Type="int" />
+          <Property Name="Star_AVG" Type="int" />
+          <Property Name="CommentQty" Type="int" />
+        </EntityType>
+        <EntityType Name="ProductSizePrice">
+          <Key>
+            <PropertyRef Name="ProductSizePriceID" />
+          </Key>
+          <Property Name="ProductSizePriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="SizeID" Type="int" />
+          <Property Name="Price" Type="money" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CityID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Size">
+          <Key>
+            <PropertyRef Name="SizeID" />
+          </Key>
+          <Property Name="SizeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SizeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="StoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegionID" Type="int" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="StoreDiscount">
+          <Key>
+            <PropertyRef Name="StoreDiscountID" />
+          </Key>
+          <Property Name="StoreDiscountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreDiscountName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StoreDiscountPrice" Type="money" Nullable="false" />
+          <Property Name="StoreID" Type="int" />
+        </EntityType>
+        <EntityType Name="StoreIngredientPrice">
+          <Key>
+            <PropertyRef Name="StoreIngredientPriceID" />
+          </Key>
+          <Property Name="StoreIngredientPriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreID" Type="int" />
+          <Property Name="IngredientID" Type="int" />
+          <Property Name="Price" Type="money" />
+        </EntityType>
+        <EntityType Name="Sugar">
+          <Key>
+            <PropertyRef Name="SugarID" />
+          </Key>
+          <Property Name="SugarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SugarName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Temperature">
+          <Key>
+            <PropertyRef Name="TemperatureID" />
+          </Key>
+          <Property Name="TemperatureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TemperatureName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Achievements_CategoryDetail">
+          <End Role="CategoryDetail" Type="Self.CategoryDetail" Multiplicity="0..1" />
+          <End Role="Achievements" Type="Self.Achievements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryDetail">
+              <PropertyRef Name="CategoryDetailID" />
+            </Principal>
+            <Dependent Role="Achievements">
+              <PropertyRef Name="CategoryDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Achievements_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="Achievements" Type="Self.Achievements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="Achievements">
+              <PropertyRef Name="RegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryDetail_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="CategoryDetail" Type="Self.CategoryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="CategoryDetail">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_favoriteProducts_member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="FavoriteProducts" Type="Self.FavoriteProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="FavoriteProducts">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_favoriteProducts_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="FavoriteProducts" Type="Self.FavoriteProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="FavoriteProducts">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_favoriteStore_member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="FavoriteStore" Type="Self.FavoriteStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="FavoriteStore">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_favoriteStore_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="FavoriteStore" Type="Self.FavoriteStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="FavoriteStore">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_memberACHV_Achievements">
+          <End Role="Achievements" Type="Self.Achievements" Multiplicity="0..1" />
+          <End Role="MemberACHV" Type="Self.MemberACHV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Achievements">
+              <PropertyRef Name="ACHVID" />
+            </Principal>
+            <Dependent Role="MemberACHV">
+              <PropertyRef Name="ACHVID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_memberACHV_member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="MemberACHV" Type="Self.MemberACHV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="MemberACHV">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_memPointDetails_member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="MemPointDetails" Type="Self.MemPointDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="MemPointDetails">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_memPointDetails_Points Mall">
+          <End Role="Points Mall" Type="Self.Points Mall" Multiplicity="0..1" />
+          <End Role="MemPointDetails" Type="Self.MemPointDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Points Mall">
+              <PropertyRef Name="PointItemID" />
+            </Principal>
+            <Dependent Role="MemPointDetails">
+              <PropertyRef Name="PointItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Details_Ingredients">
+          <End Role="Ingredients" Type="Self.Ingredients" Multiplicity="0..1" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredients">
+              <PropertyRef Name="IngredientID" />
+            </Principal>
+            <Dependent Role="Order Details">
+              <PropertyRef Name="IngredientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Details_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="Order Details">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Details_Points Mall">
+          <End Role="Points Mall" Type="Self.Points Mall" Multiplicity="0..1" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Points Mall">
+              <PropertyRef Name="PointItemID" />
+            </Principal>
+            <Dependent Role="Order Details">
+              <PropertyRef Name="PointItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Details_Size">
+          <End Role="Size" Type="Self.Size" Multiplicity="1" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="SizeID" />
+            </Principal>
+            <Dependent Role="Order Details">
+              <PropertyRef Name="SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Details_StoreDiscount">
+          <End Role="StoreDiscount" Type="Self.StoreDiscount" Multiplicity="0..1" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreDiscount">
+              <PropertyRef Name="StoreDiscountID" />
+            </Principal>
+            <Dependent Role="Order Details">
+              <PropertyRef Name="StoreDiscountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Details_Sugar">
+          <End Role="Sugar" Type="Self.Sugar" Multiplicity="1" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sugar">
+              <PropertyRef Name="SugarID" />
+            </Principal>
+            <Dependent Role="Order Details">
+              <PropertyRef Name="SugarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order Details_Temperature">
+          <End Role="Temperature" Type="Self.Temperature" Multiplicity="1" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Temperature">
+              <PropertyRef Name="TemperatureID" />
+            </Principal>
+            <Dependent Role="Order Details">
+              <PropertyRef Name="TemperatureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_CategoryDetail">
+          <End Role="CategoryDetail" Type="Self.CategoryDetail" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryDetail">
+              <PropertyRef Name="CategoryDetailID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductSizePrice_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="ProductSizePrice" Type="Self.ProductSizePrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductSizePrice">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductSizePrice_Size">
+          <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
+          <End Role="ProductSizePrice" Type="Self.ProductSizePrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="SizeID" />
+            </Principal>
+            <Dependent Role="ProductSizePrice">
+              <PropertyRef Name="SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Region_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Region" Type="Self.Region" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="Region">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="RegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreDiscount_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="StoreDiscount" Type="Self.StoreDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="StoreDiscount">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreIngredientPrice_Ingredients">
+          <End Role="Ingredients" Type="Self.Ingredients" Multiplicity="0..1" />
+          <End Role="StoreIngredientPrice" Type="Self.StoreIngredientPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredients">
+              <PropertyRef Name="IngredientID" />
+            </Principal>
+            <Dependent Role="StoreIngredientPrice">
+              <PropertyRef Name="IngredientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreIngredientPrice_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="StoreIngredientPrice" Type="Self.StoreIngredientPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="StoreIngredientPrice">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DrinkAgeModel1StoreContainer">
+          <EntitySet Name="Achievements" EntityType="Self.Achievements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoryDetail" EntityType="Self.CategoryDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FavoriteProducts" EntityType="Self.FavoriteProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FavoriteStore" EntityType="Self.FavoriteStore" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingredients" EntityType="Self.Ingredients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MemberACHV" EntityType="Self.MemberACHV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MemPointDetails" EntityType="Self.MemPointDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order Details" EntityType="Self.Order Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Points Mall" EntityType="Self.Points Mall" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductSizePrice" EntityType="Self.ProductSizePrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StoreDiscount" EntityType="Self.StoreDiscount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StoreIngredientPrice" EntityType="Self.StoreIngredientPrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sugar" EntityType="Self.Sugar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Temperature" EntityType="Self.Temperature" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Achievements_CategoryDetail" Association="Self.FK_Achievements_CategoryDetail">
+            <End Role="CategoryDetail" EntitySet="CategoryDetail" />
+            <End Role="Achievements" EntitySet="Achievements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Achievements_Region" Association="Self.FK_Achievements_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Achievements" EntitySet="Achievements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryDetail_Category" Association="Self.FK_CategoryDetail_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="CategoryDetail" EntitySet="CategoryDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Products" Association="Self.FK_Comment_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_favoriteProducts_member" Association="Self.FK_favoriteProducts_member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="FavoriteProducts" EntitySet="FavoriteProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_favoriteProducts_Products" Association="Self.FK_favoriteProducts_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="FavoriteProducts" EntitySet="FavoriteProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_favoriteStore_member" Association="Self.FK_favoriteStore_member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="FavoriteStore" EntitySet="FavoriteStore" />
+          </AssociationSet>
+          <AssociationSet Name="FK_favoriteStore_Store" Association="Self.FK_favoriteStore_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="FavoriteStore" EntitySet="FavoriteStore" />
+          </AssociationSet>
+          <AssociationSet Name="FK_memberACHV_Achievements" Association="Self.FK_memberACHV_Achievements">
+            <End Role="Achievements" EntitySet="Achievements" />
+            <End Role="MemberACHV" EntitySet="MemberACHV" />
+          </AssociationSet>
+          <AssociationSet Name="FK_memberACHV_member" Association="Self.FK_memberACHV_member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="MemberACHV" EntitySet="MemberACHV" />
+          </AssociationSet>
+          <AssociationSet Name="FK_memPointDetails_member" Association="Self.FK_memPointDetails_member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="MemPointDetails" EntitySet="MemPointDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_memPointDetails_Points Mall" Association="Self.FK_memPointDetails_Points Mall">
+            <End Role="Points Mall" EntitySet="Points Mall" />
+            <End Role="MemPointDetails" EntitySet="MemPointDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Details_Ingredients" Association="Self.FK_Order Details_Ingredients">
+            <End Role="Ingredients" EntitySet="Ingredients" />
+            <End Role="Order Details" EntitySet="Order Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Details_Orders" Association="Self.FK_Order Details_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Order Details" EntitySet="Order Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Details_Points Mall" Association="Self.FK_Order Details_Points Mall">
+            <End Role="Points Mall" EntitySet="Points Mall" />
+            <End Role="Order Details" EntitySet="Order Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Details_Size" Association="Self.FK_Order Details_Size">
+            <End Role="Size" EntitySet="Size" />
+            <End Role="Order Details" EntitySet="Order Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Details_StoreDiscount" Association="Self.FK_Order Details_StoreDiscount">
+            <End Role="StoreDiscount" EntitySet="StoreDiscount" />
+            <End Role="Order Details" EntitySet="Order Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Details_Sugar" Association="Self.FK_Order Details_Sugar">
+            <End Role="Sugar" EntitySet="Sugar" />
+            <End Role="Order Details" EntitySet="Order Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order Details_Temperature" Association="Self.FK_Order Details_Temperature">
+            <End Role="Temperature" EntitySet="Temperature" />
+            <End Role="Order Details" EntitySet="Order Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Employees" Association="Self.FK_Orders_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_member" Association="Self.FK_Orders_member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Store" Association="Self.FK_Orders_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_CategoryDetail" Association="Self.FK_Products_CategoryDetail">
+            <End Role="CategoryDetail" EntitySet="CategoryDetail" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Store" Association="Self.FK_Products_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductSizePrice_Products" Association="Self.FK_ProductSizePrice_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductSizePrice" EntitySet="ProductSizePrice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductSizePrice_Size" Association="Self.FK_ProductSizePrice_Size">
+            <End Role="Size" EntitySet="Size" />
+            <End Role="ProductSizePrice" EntitySet="ProductSizePrice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Region_City" Association="Self.FK_Region_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Region" EntitySet="Region" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Region" Association="Self.FK_Store_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreDiscount_Store" Association="Self.FK_StoreDiscount_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="StoreDiscount" EntitySet="StoreDiscount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreIngredientPrice_Ingredients" Association="Self.FK_StoreIngredientPrice_Ingredients">
+            <End Role="Ingredients" EntitySet="Ingredients" />
+            <End Role="StoreIngredientPrice" EntitySet="StoreIngredientPrice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreIngredientPrice_Store" Association="Self.FK_StoreIngredientPrice_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="StoreIngredientPrice" EntitySet="StoreIngredientPrice" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DrinkAgeModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Achievement">
+          <Key>
+            <PropertyRef Name="ACHVID" />
+          </Key>
+          <Property Name="ACHVID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ACHVName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryDetailID" Type="Int32" />
+          <Property Name="RegionID" Type="Int32" />
+          <Property Name="Point" Type="Int32" />
+          <NavigationProperty Name="CategoryDetail" Relationship="Self.FK_Achievements_CategoryDetail" FromRole="Achievements" ToRole="CategoryDetail" />
+          <NavigationProperty Name="Region" Relationship="Self.FK_Achievements_Region" FromRole="Achievements" ToRole="Region" />
+          <NavigationProperty Name="MemberACHVs" Relationship="Self.FK_memberACHV_Achievements" FromRole="Achievements" ToRole="MemberACHV" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CategoryDetails" Relationship="Self.FK_CategoryDetail_Category" FromRole="Category" ToRole="CategoryDetail" />
+        </EntityType>
+        <EntityType Name="CategoryDetail">
+          <Key>
+            <PropertyRef Name="CategoryDetailID" />
+          </Key>
+          <Property Name="CategoryDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryDetailName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Achievements" Relationship="Self.FK_Achievements_CategoryDetail" FromRole="CategoryDetail" ToRole="Achievements" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_CategoryDetail_Category" FromRole="CategoryDetail" ToRole="Category" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Products_CategoryDetail" FromRole="CategoryDetail" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Regions" Relationship="Self.FK_Region_City" FromRole="City" ToRole="Region" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentID" />
+          </Key>
+          <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Comment1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Star" Type="Int32" />
+          <Property Name="GP_Quantity" Type="Int32" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Comment_Products" FromRole="Comment" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeIDNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HiredDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Employees" FromRole="Employees" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="FavoriteProduct">
+          <Key>
+            <PropertyRef Name="FavoriteProductID" />
+          </Key>
+          <Property Name="FavoriteProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="ProductID" Type="Int32" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_favoriteProducts_member" FromRole="FavoriteProducts" ToRole="Member" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_favoriteProducts_Products" FromRole="FavoriteProducts" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="FavoriteStore">
+          <Key>
+            <PropertyRef Name="FavoriteStoreID" />
+          </Key>
+          <Property Name="FavoriteStoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="StoreID" Type="Int32" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_favoriteStore_member" FromRole="FavoriteStore" ToRole="Member" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_favoriteStore_Store" FromRole="FavoriteStore" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="IngredientID" />
+          </Key>
+          <Property Name="IngredientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IngredientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Ingredients" FromRole="Ingredients" ToRole="Order_Details" />
+          <NavigationProperty Name="StoreIngredientPrices" Relationship="Self.FK_StoreIngredientPrice_Ingredients" FromRole="Ingredients" ToRole="StoreIngredientPrice" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MemberPIC" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Birth" Type="DateTime" Precision="0" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Level" Type="Int32" />
+          <Property Name="Exp" Type="Int32" />
+          <Property Name="Point" Type="Int32" />
+          <Property Name="ACHVID" Type="Int32" />
+          <NavigationProperty Name="FavoriteProducts" Relationship="Self.FK_favoriteProducts_member" FromRole="Member" ToRole="FavoriteProducts" />
+          <NavigationProperty Name="FavoriteStores" Relationship="Self.FK_favoriteStore_member" FromRole="Member" ToRole="FavoriteStore" />
+          <NavigationProperty Name="MemberACHVs" Relationship="Self.FK_memberACHV_member" FromRole="Member" ToRole="MemberACHV" />
+          <NavigationProperty Name="MemPointDetails" Relationship="Self.FK_memPointDetails_member" FromRole="Member" ToRole="MemPointDetails" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_member" FromRole="Member" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="MemberACHV">
+          <Key>
+            <PropertyRef Name="MemberACHVID" />
+          </Key>
+          <Property Name="MemberACHVID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="ACHVID" Type="Int32" />
+          <NavigationProperty Name="Achievement" Relationship="Self.FK_memberACHV_Achievements" FromRole="MemberACHV" ToRole="Achievements" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_memberACHV_member" FromRole="MemberACHV" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="MemPointDetail">
+          <Key>
+            <PropertyRef Name="MemPointDetail_ID" />
+          </Key>
+          <Property Name="MemPointDetail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="PointItemID" Type="Int32" />
+          <Property Name="Quanity" Type="Int32" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_memPointDetails_member" FromRole="MemPointDetails" ToRole="Member" />
+          <NavigationProperty Name="Points_Mall" Relationship="Self.FK_memPointDetails_Points_Mall" FromRole="MemPointDetails" ToRole="Points_Mall" />
+        </EntityType>
+        <EntityType Name="Order_Detail">
+          <Key>
+            <PropertyRef Name="OrderDetail_ID" />
+          </Key>
+          <Property Name="OrderDetail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="SizeID" Type="Int32" Nullable="false" />
+          <Property Name="SugarID" Type="Int32" Nullable="false" />
+          <Property Name="TemperatureID" Type="Int32" Nullable="false" />
+          <Property Name="IngredientID" Type="Int32" />
+          <Property Name="StoreDiscountID" Type="Int32" />
+          <Property Name="PointItemID" Type="Int32" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK_Order_Details_Ingredients" FromRole="Order_Details" ToRole="Ingredients" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_Details_Orders" FromRole="Order_Details" ToRole="Orders" />
+          <NavigationProperty Name="Points_Mall" Relationship="Self.FK_Order_Details_Points_Mall" FromRole="Order_Details" ToRole="Points_Mall" />
+          <NavigationProperty Name="Size" Relationship="Self.FK_Order_Details_Size" FromRole="Order_Details" ToRole="Size" />
+          <NavigationProperty Name="StoreDiscount" Relationship="Self.FK_Order_Details_StoreDiscount" FromRole="Order_Details" ToRole="StoreDiscount" />
+          <NavigationProperty Name="Sugar" Relationship="Self.FK_Order_Details_Sugar" FromRole="Order_Details" ToRole="Sugar" />
+          <NavigationProperty Name="Temperature" Relationship="Self.FK_Order_Details_Temperature" FromRole="Order_Details" ToRole="Temperature" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="StoreID" Type="Int32" Nullable="false" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ArrivedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Orders_Employees" FromRole="Orders" ToRole="Employees" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Orders_member" FromRole="Orders" ToRole="Member" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Orders" FromRole="Orders" ToRole="Order_Details" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Orders_Store" FromRole="Orders" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Points_Mall">
+          <Key>
+            <PropertyRef Name="PointItemID" />
+          </Key>
+          <Property Name="PointItemID" Type="Int32" Nullable="false" />
+          <Property Name="PointItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemPoint" Type="Int32" />
+          <Property Name="ItemPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PointDiscountPrice" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="MemPointDetails" Relationship="Self.FK_memPointDetails_Points_Mall" FromRole="Points_Mall" ToRole="MemPointDetails" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Points_Mall" FromRole="Points_Mall" ToRole="Order_Details" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryDetailID" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StoreID" Type="Int32" />
+          <Property Name="Star_AVG" Type="Int32" />
+          <Property Name="CommentQty" Type="Int32" />
+          <NavigationProperty Name="CategoryDetail" Relationship="Self.FK_Products_CategoryDetail" FromRole="Products" ToRole="CategoryDetail" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_Products" FromRole="Products" ToRole="Comment" />
+          <NavigationProperty Name="FavoriteProducts" Relationship="Self.FK_favoriteProducts_Products" FromRole="Products" ToRole="FavoriteProducts" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Products_Store" FromRole="Products" ToRole="Store" />
+          <NavigationProperty Name="ProductSizePrices" Relationship="Self.FK_ProductSizePrice_Products" FromRole="Products" ToRole="ProductSizePrice" />
+        </EntityType>
+        <EntityType Name="ProductSizePrice">
+          <Key>
+            <PropertyRef Name="ProductSizePriceID" />
+          </Key>
+          <Property Name="ProductSizePriceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="SizeID" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductSizePrice_Products" FromRole="ProductSizePrice" ToRole="Products" />
+          <NavigationProperty Name="Size" Relationship="Self.FK_ProductSizePrice_Size" FromRole="ProductSizePrice" ToRole="Size" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CityID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Achievements" Relationship="Self.FK_Achievements_Region" FromRole="Region" ToRole="Achievements" />
+          <NavigationProperty Name="City" Relationship="Self.FK_Region_City" FromRole="Region" ToRole="City" />
+          <NavigationProperty Name="Stores" Relationship="Self.FK_Store_Region" FromRole="Region" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Size">
+          <Key>
+            <PropertyRef Name="SizeID" />
+          </Key>
+          <Property Name="SizeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SizeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Size" FromRole="Size" ToRole="Order_Details" />
+          <NavigationProperty Name="ProductSizePrices" Relationship="Self.FK_ProductSizePrice_Size" FromRole="Size" ToRole="ProductSizePrice" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="StoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegionID" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FavoriteStores" Relationship="Self.FK_favoriteStore_Store" FromRole="Store" ToRole="FavoriteStore" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Store" FromRole="Store" ToRole="Orders" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Products_Store" FromRole="Store" ToRole="Products" />
+          <NavigationProperty Name="Region" Relationship="Self.FK_Store_Region" FromRole="Store" ToRole="Region" />
+          <NavigationProperty Name="StoreDiscounts" Relationship="Self.FK_StoreDiscount_Store" FromRole="Store" ToRole="StoreDiscount" />
+          <NavigationProperty Name="StoreIngredientPrices" Relationship="Self.FK_StoreIngredientPrice_Store" FromRole="Store" ToRole="StoreIngredientPrice" />
+        </EntityType>
+        <EntityType Name="StoreDiscount">
+          <Key>
+            <PropertyRef Name="StoreDiscountID" />
+          </Key>
+          <Property Name="StoreDiscountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreDiscountName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StoreDiscountPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="StoreID" Type="Int32" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_StoreDiscount" FromRole="StoreDiscount" ToRole="Order_Details" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_StoreDiscount_Store" FromRole="StoreDiscount" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="StoreIngredientPrice">
+          <Key>
+            <PropertyRef Name="StoreIngredientPriceID" />
+          </Key>
+          <Property Name="StoreIngredientPriceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreID" Type="Int32" />
+          <Property Name="IngredientID" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK_StoreIngredientPrice_Ingredients" FromRole="StoreIngredientPrice" ToRole="Ingredients" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_StoreIngredientPrice_Store" FromRole="StoreIngredientPrice" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Sugar">
+          <Key>
+            <PropertyRef Name="SugarID" />
+          </Key>
+          <Property Name="SugarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SugarName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Sugar" FromRole="Sugar" ToRole="Order_Details" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Temperature">
+          <Key>
+            <PropertyRef Name="TemperatureID" />
+          </Key>
+          <Property Name="TemperatureID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TemperatureName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Temperature" FromRole="Temperature" ToRole="Order_Details" />
+        </EntityType>
+        <Association Name="FK_Achievements_CategoryDetail">
+          <End Role="CategoryDetail" Type="Self.CategoryDetail" Multiplicity="0..1" />
+          <End Role="Achievements" Type="Self.Achievement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryDetail">
+              <PropertyRef Name="CategoryDetailID" />
+            </Principal>
+            <Dependent Role="Achievements">
+              <PropertyRef Name="CategoryDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Achievements_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="Achievements" Type="Self.Achievement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="Achievements">
+              <PropertyRef Name="RegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_memberACHV_Achievements">
+          <End Role="Achievements" Type="Self.Achievement" Multiplicity="0..1" />
+          <End Role="MemberACHV" Type="Self.MemberACHV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Achievements">
+              <PropertyRef Name="ACHVID" />
+            </Principal>
+            <Dependent Role="MemberACHV">
+              <PropertyRef Name="ACHVID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryDetail_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="CategoryDetail" Type="Self.CategoryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="CategoryDetail">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_CategoryDetail">
+          <End Role="CategoryDetail" Type="Self.CategoryDetail" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryDetail">
+              <PropertyRef Name="CategoryDetailID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Region_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Region" Type="Self.Region" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="Region">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Products">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_favoriteProducts_member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="FavoriteProducts" Type="Self.FavoriteProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="FavoriteProducts">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_favoriteProducts_Products">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="FavoriteProducts" Type="Self.FavoriteProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="FavoriteProducts">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_favoriteStore_member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="FavoriteStore" Type="Self.FavoriteStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="FavoriteStore">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_favoriteStore_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="FavoriteStore" Type="Self.FavoriteStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="FavoriteStore">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Ingredients">
+          <End Role="Ingredients" Type="Self.Ingredient" Multiplicity="0..1" />
+          <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredients">
+              <PropertyRef Name="IngredientID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="IngredientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreIngredientPrice_Ingredients">
+          <End Role="Ingredients" Type="Self.Ingredient" Multiplicity="0..1" />
+          <End Role="StoreIngredientPrice" Type="Self.StoreIngredientPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredients">
+              <PropertyRef Name="IngredientID" />
+            </Principal>
+            <Dependent Role="StoreIngredientPrice">
+              <PropertyRef Name="IngredientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_memberACHV_member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="MemberACHV" Type="Self.MemberACHV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="MemberACHV">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_memPointDetails_member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="MemPointDetails" Type="Self.MemPointDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="MemPointDetails">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_memPointDetails_Points_Mall">
+          <End Role="Points_Mall" Type="Self.Points_Mall" Multiplicity="0..1" />
+          <End Role="MemPointDetails" Type="Self.MemPointDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Points_Mall">
+              <PropertyRef Name="PointItemID" />
+            </Principal>
+            <Dependent Role="MemPointDetails">
+              <PropertyRef Name="PointItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Orders">
+          <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+          <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Points_Mall">
+          <End Role="Points_Mall" Type="Self.Points_Mall" Multiplicity="0..1" />
+          <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Points_Mall">
+              <PropertyRef Name="PointItemID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="PointItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Size">
+          <End Role="Size" Type="Self.Size" Multiplicity="1" />
+          <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="SizeID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_StoreDiscount">
+          <End Role="StoreDiscount" Type="Self.StoreDiscount" Multiplicity="0..1" />
+          <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreDiscount">
+              <PropertyRef Name="StoreDiscountID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="StoreDiscountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Sugar">
+          <End Role="Sugar" Type="Self.Sugar" Multiplicity="1" />
+          <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sugar">
+              <PropertyRef Name="SugarID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="SugarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Temperature">
+          <End Role="Temperature" Type="Self.Temperature" Multiplicity="1" />
+          <End Role="Order_Details" Type="Self.Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Temperature">
+              <PropertyRef Name="TemperatureID" />
+            </Principal>
+            <Dependent Role="Order_Details">
+              <PropertyRef Name="TemperatureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductSizePrice_Products">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="ProductSizePrice" Type="Self.ProductSizePrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductSizePrice">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductSizePrice_Size">
+          <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
+          <End Role="ProductSizePrice" Type="Self.ProductSizePrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Size">
+              <PropertyRef Name="SizeID" />
+            </Principal>
+            <Dependent Role="ProductSizePrice">
+              <PropertyRef Name="SizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="RegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreDiscount_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="StoreDiscount" Type="Self.StoreDiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="StoreDiscount">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreIngredientPrice_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="StoreIngredientPrice" Type="Self.StoreIngredientPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="StoreIngredientPrice">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DrinkAgeEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Achievements" EntityType="Self.Achievement" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="CategoryDetails" EntityType="Self.CategoryDetail" />
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <EntitySet Name="Comments" EntityType="Self.Comment" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="FavoriteProducts" EntityType="Self.FavoriteProduct" />
+          <EntitySet Name="FavoriteStores" EntityType="Self.FavoriteStore" />
+          <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="MemberACHVs" EntityType="Self.MemberACHV" />
+          <EntitySet Name="MemPointDetails" EntityType="Self.MemPointDetail" />
+          <EntitySet Name="Order_Details" EntityType="Self.Order_Detail" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Points_Malls" EntityType="Self.Points_Mall" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductSizePrices" EntityType="Self.ProductSizePrice" />
+          <EntitySet Name="Regions" EntityType="Self.Region" />
+          <EntitySet Name="Sizes" EntityType="Self.Size" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="StoreDiscounts" EntityType="Self.StoreDiscount" />
+          <EntitySet Name="StoreIngredientPrices" EntityType="Self.StoreIngredientPrice" />
+          <EntitySet Name="Sugars" EntityType="Self.Sugar" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Temperatures" EntityType="Self.Temperature" />
+          <AssociationSet Name="FK_Achievements_CategoryDetail" Association="Self.FK_Achievements_CategoryDetail">
+            <End Role="CategoryDetail" EntitySet="CategoryDetails" />
+            <End Role="Achievements" EntitySet="Achievements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Achievements_Region" Association="Self.FK_Achievements_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="Achievements" EntitySet="Achievements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_memberACHV_Achievements" Association="Self.FK_memberACHV_Achievements">
+            <End Role="Achievements" EntitySet="Achievements" />
+            <End Role="MemberACHV" EntitySet="MemberACHVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryDetail_Category" Association="Self.FK_CategoryDetail_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="CategoryDetail" EntitySet="CategoryDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_CategoryDetail" Association="Self.FK_Products_CategoryDetail">
+            <End Role="CategoryDetail" EntitySet="CategoryDetails" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Region_City" Association="Self.FK_Region_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Region" EntitySet="Regions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Products" Association="Self.FK_Comment_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Employees" Association="Self.FK_Orders_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_favoriteProducts_member" Association="Self.FK_favoriteProducts_member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="FavoriteProducts" EntitySet="FavoriteProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_favoriteProducts_Products" Association="Self.FK_favoriteProducts_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="FavoriteProducts" EntitySet="FavoriteProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_favoriteStore_member" Association="Self.FK_favoriteStore_member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="FavoriteStore" EntitySet="FavoriteStores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_favoriteStore_Store" Association="Self.FK_favoriteStore_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="FavoriteStore" EntitySet="FavoriteStores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Ingredients" Association="Self.FK_Order_Details_Ingredients">
+            <End Role="Ingredients" EntitySet="Ingredients" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreIngredientPrice_Ingredients" Association="Self.FK_StoreIngredientPrice_Ingredients">
+            <End Role="Ingredients" EntitySet="Ingredients" />
+            <End Role="StoreIngredientPrice" EntitySet="StoreIngredientPrices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_memberACHV_member" Association="Self.FK_memberACHV_member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="MemberACHV" EntitySet="MemberACHVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_memPointDetails_member" Association="Self.FK_memPointDetails_member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="MemPointDetails" EntitySet="MemPointDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_member" Association="Self.FK_Orders_member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_memPointDetails_Points_Mall" Association="Self.FK_memPointDetails_Points_Mall">
+            <End Role="Points_Mall" EntitySet="Points_Malls" />
+            <End Role="MemPointDetails" EntitySet="MemPointDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Orders" Association="Self.FK_Order_Details_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Points_Mall" Association="Self.FK_Order_Details_Points_Mall">
+            <End Role="Points_Mall" EntitySet="Points_Malls" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Size" Association="Self.FK_Order_Details_Size">
+            <End Role="Size" EntitySet="Sizes" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_StoreDiscount" Association="Self.FK_Order_Details_StoreDiscount">
+            <End Role="StoreDiscount" EntitySet="StoreDiscounts" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Sugar" Association="Self.FK_Order_Details_Sugar">
+            <End Role="Sugar" EntitySet="Sugars" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Temperature" Association="Self.FK_Order_Details_Temperature">
+            <End Role="Temperature" EntitySet="Temperatures" />
+            <End Role="Order_Details" EntitySet="Order_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Store" Association="Self.FK_Orders_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Store" Association="Self.FK_Products_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductSizePrice_Products" Association="Self.FK_ProductSizePrice_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductSizePrice" EntitySet="ProductSizePrices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductSizePrice_Size" Association="Self.FK_ProductSizePrice_Size">
+            <End Role="Size" EntitySet="Sizes" />
+            <End Role="ProductSizePrice" EntitySet="ProductSizePrices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Region" Association="Self.FK_Store_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreDiscount_Store" Association="Self.FK_StoreDiscount_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="StoreDiscount" EntitySet="StoreDiscounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreIngredientPrice_Store" Association="Self.FK_StoreIngredientPrice_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="StoreIngredientPrice" EntitySet="StoreIngredientPrices" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DrinkAgeModel1StoreContainer" CdmEntityContainer="DrinkAgeEntities1">
+          <EntitySetMapping Name="Achievements">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Achievement">
+              <MappingFragment StoreEntitySet="Achievements">
+                <ScalarProperty Name="ACHVID" ColumnName="ACHVID" />
+                <ScalarProperty Name="ACHVName" ColumnName="ACHVName" />
+                <ScalarProperty Name="CategoryDetailID" ColumnName="CategoryDetailID" />
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="Point" ColumnName="Point" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoryDetails">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.CategoryDetail">
+              <MappingFragment StoreEntitySet="CategoryDetail">
+                <ScalarProperty Name="CategoryDetailID" ColumnName="CategoryDetailID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryDetailName" ColumnName="CategoryDetailName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Comment1" ColumnName="Comment" />
+                <ScalarProperty Name="Star" ColumnName="Star" />
+                <ScalarProperty Name="GP_Quantity" ColumnName="GP_Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeIDNumber" ColumnName="EmployeeIDNumber" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="HiredDate" ColumnName="HiredDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FavoriteProducts">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.FavoriteProduct">
+              <MappingFragment StoreEntitySet="FavoriteProducts">
+                <ScalarProperty Name="FavoriteProductID" ColumnName="FavoriteProductID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FavoriteStores">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.FavoriteStore">
+              <MappingFragment StoreEntitySet="FavoriteStore">
+                <ScalarProperty Name="FavoriteStoreID" ColumnName="FavoriteStoreID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingredients">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Ingredient">
+              <MappingFragment StoreEntitySet="Ingredients">
+                <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+                <ScalarProperty Name="IngredientName" ColumnName="IngredientName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="MemberPIC" ColumnName="MemberPIC" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Birth" ColumnName="Birth" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Exp" ColumnName="Exp" />
+                <ScalarProperty Name="Point" ColumnName="Point" />
+                <ScalarProperty Name="ACHVID" ColumnName="ACHVID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberACHVs">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.MemberACHV">
+              <MappingFragment StoreEntitySet="MemberACHV">
+                <ScalarProperty Name="MemberACHVID" ColumnName="MemberACHVID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="ACHVID" ColumnName="ACHVID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemPointDetails">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.MemPointDetail">
+              <MappingFragment StoreEntitySet="MemPointDetails">
+                <ScalarProperty Name="MemPointDetail_ID" ColumnName="MemPointDetail_ID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="PointItemID" ColumnName="PointItemID" />
+                <ScalarProperty Name="Quanity" ColumnName="Quanity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Details">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Order_Detail">
+              <MappingFragment StoreEntitySet="Order Details">
+                <ScalarProperty Name="OrderDetail_ID" ColumnName="OrderDetail_ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+                <ScalarProperty Name="SugarID" ColumnName="SugarID" />
+                <ScalarProperty Name="TemperatureID" ColumnName="TemperatureID" />
+                <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+                <ScalarProperty Name="StoreDiscountID" ColumnName="StoreDiscountID" />
+                <ScalarProperty Name="PointItemID" ColumnName="PointItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="ArrivedDate" ColumnName="ArrivedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Points_Malls">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Points_Mall">
+              <MappingFragment StoreEntitySet="Points Mall">
+                <ScalarProperty Name="PointItemID" ColumnName="PointItemID" />
+                <ScalarProperty Name="PointItemName" ColumnName="PointItemName" />
+                <ScalarProperty Name="ItemPoint" ColumnName="ItemPoint" />
+                <ScalarProperty Name="ItemPicture" ColumnName="ItemPicture" />
+                <ScalarProperty Name="PointDiscountPrice" ColumnName="PointDiscountPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductPhoto" ColumnName="ProductPhoto" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryDetailID" ColumnName="CategoryDetailID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="Star_AVG" ColumnName="Star_AVG" />
+                <ScalarProperty Name="CommentQty" ColumnName="CommentQty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductSizePrices">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.ProductSizePrice">
+              <MappingFragment StoreEntitySet="ProductSizePrice">
+                <ScalarProperty Name="ProductSizePriceID" ColumnName="ProductSizePriceID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sizes">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Size">
+              <MappingFragment StoreEntitySet="Size">
+                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+                <ScalarProperty Name="SizeName" ColumnName="SizeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreDiscounts">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.StoreDiscount">
+              <MappingFragment StoreEntitySet="StoreDiscount">
+                <ScalarProperty Name="StoreDiscountID" ColumnName="StoreDiscountID" />
+                <ScalarProperty Name="StoreDiscountName" ColumnName="StoreDiscountName" />
+                <ScalarProperty Name="StoreDiscountPrice" ColumnName="StoreDiscountPrice" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreIngredientPrices">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.StoreIngredientPrice">
+              <MappingFragment StoreEntitySet="StoreIngredientPrice">
+                <ScalarProperty Name="StoreIngredientPriceID" ColumnName="StoreIngredientPriceID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sugars">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Sugar">
+              <MappingFragment StoreEntitySet="Sugar">
+                <ScalarProperty Name="SugarID" ColumnName="SugarID" />
+                <ScalarProperty Name="SugarName" ColumnName="SugarName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Temperatures">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Temperature">
+              <MappingFragment StoreEntitySet="Temperature">
+                <ScalarProperty Name="TemperatureID" ColumnName="TemperatureID" />
+                <ScalarProperty Name="TemperatureName" ColumnName="TemperatureName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
