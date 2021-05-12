@@ -1,5 +1,6 @@
 ﻿using DrinkAge.會員.mods;
 using DrinkAge_1._0.Properties;
+using DrinkAge_1._0.會員;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -60,7 +61,7 @@ namespace DrinkAge.會員
 
         private void label3_Click(object sender, EventArgs e)
         {
-            member02 f = new member02();
+            member02_1 f = new member02_1();
             f.Show();
         }
 
@@ -81,6 +82,12 @@ namespace DrinkAge.會員
             {
                 this.pictureBox1.Image = Image.FromFile("C:\\Users\\User\\Documents\\GitHub\\slnDrinkAge_1.0\\DrinkAge_1.0\\會員\\testimg\\adv03.png");
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            member02_2 f2 = new member02_2();
+            f2.Show();
         }
     }
 }

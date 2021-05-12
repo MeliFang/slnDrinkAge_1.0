@@ -216,9 +216,23 @@
     <Compile Include="會員\member01.designer.cs">
       <DependentUpon>member01.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="會員\member02-1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\member02-1.Designer.cs">
+      <DependentUpon>member02-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="會員\member02-2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\member02-2.designer.cs">
+      <DependentUpon>member02-2.cs</DependentUpon>
+
     <Compile Include="會員\member02.cs" />
     <Compile Include="會員\member02.designer.cs">
       <DependentUpon>member02.cs</DependentUpon>
+
     </Compile>
     <Compile Include="會員\member03.cs" />
     <Compile Include="會員\member03.designer.cs">
@@ -259,8 +273,11 @@
     <EmbeddedResource Include="會員\member01.resx">
       <DependentUpon>member01.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="會員\member02.resx">
-      <DependentUpon>member02.cs</DependentUpon>
+    <EmbeddedResource Include="會員\member02-1.resx">
+      <DependentUpon>member02-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\member02-2.resx">
+      <DependentUpon>member02-2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="會員\member03.resx">
       <DependentUpon>member03.cs</DependentUpon>
