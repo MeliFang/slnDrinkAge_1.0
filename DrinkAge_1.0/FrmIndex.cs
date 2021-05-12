@@ -59,8 +59,8 @@ namespace DrinkAge_1._0
 
         private void btnMemberLogon_Click(object sender, EventArgs e)
         {
-            member01 f = new member01();
-            f.Show();
+            //member01 f = new member01();
+            //f.Show();
         }
     }
 }
