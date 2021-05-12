@@ -57,22 +57,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Achievement.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="Category.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="CategoryDetail.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="City.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="ClassOfConsole\UpdateFortable.cs" />
     <Compile Include="ClassOfConsole\DataGridviewQuery.cs" />
     <Compile Include="ClassOfConsole\QueryForTable.cs" />
     <Compile Include="Comment.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="CommentDetail.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
@@ -97,14 +97,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>da_DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DrinjAge_Ver1.0.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DrinjAge_Ver1.0.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DrinjAge_Ver1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DrinjAge_Ver1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DrinjAge_Ver1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="FavoriteProduct.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="FavoriteStore.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
 
     <Compile Include="FormLiang1.cs">
@@ -121,7 +136,7 @@
       <DependentUpon>FrmSearch_Fang.cs</DependentUpon>
     </Compile>
     <Compile Include="Ingredient.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="LangCotrol.cs">
       <SubType>Form</SubType>
@@ -130,54 +145,60 @@
       <DependentUpon>LangCotrol.cs</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="MemberACHV.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="MemPointDetail.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="Order_Detail.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order_Page.Designer.cs">
+      <DependentUpon>Order_Page.cs</DependentUpon>
     </Compile>
     <Compile Include="Points_Mall.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductSizePrice.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Region.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="Size.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="Store.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="StoreDiscount.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="StoreIngredientPrice.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="Sugar.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="Temperature.cs">
-      <DependentUpon>da_DataModel.tt</DependentUpon>
+      <DependentUpon>DrinjAge_Ver1.tt</DependentUpon>
     </Compile>
     <Compile Include="Test1.cs">
       <SubType>Form</SubType>
@@ -194,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LangCotrol.resx">
       <DependentUpon>LangCotrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order_Page.resx">
+      <DependentUpon>Order_Page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -225,6 +249,13 @@
     <None Include="da_DataSet.xss">
       <DependentUpon>da_DataSet.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="DrinjAge_Ver1.0.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DrinjAge_Ver1.0.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DrinjAge_Ver1.0.edmx.diagram">
+      <DependentUpon>DrinjAge_Ver1.0.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -249,6 +280,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>da_DataModel.edmx</DependentUpon>
       <LastGenOutput>da_DataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="DrinjAge_Ver1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DrinjAge_Ver1.0.edmx</DependentUpon>
+      <LastGenOutput>DrinjAge_Ver1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DrinjAge_Ver1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DrinjAge_Ver1.0.edmx</DependentUpon>
+      <LastGenOutput>DrinjAge_Ver1.cs</LastGenOutput>
     </Content>
     <Content Include="image\gura.png" />
   </ItemGroup>
