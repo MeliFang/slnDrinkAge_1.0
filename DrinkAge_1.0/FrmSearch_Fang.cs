@@ -84,22 +84,36 @@ namespace DrinkAge_1._0
 
         private void btnComment_Click(object sender, EventArgs e)
         {
-            DrinkAgeEntities dbContext = new DrinkAgeEntities();
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=DrinkAge;Integrated Security=True");
+            try
+            {
+                conn.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter("select ProductName as 產品名稱, Price as '價格(大杯)', P.Comment as 簡述, S.StoreName as 店家名稱, CommentQty as 評論數量 from Products as P inner join Store as S on P.StoreID = S.StoreID group by ProductName, Price, P.Comment, S.StoreName, CommentQty order by P.CommentQty desc", conn);
+                DataSet ds = new DataSet();
+                dataAdapter.Fill(ds);
+                this.dataGrid_Comment.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "SystemError!!");
+            }
+            finally
+            {
+                conn.Dispose();
+                conn.Close();
+            }
 
-            var Q = from c in dbContext.Comments
-                    select new { c.CommentID, c.Comment1 };
+            //DrinkAgeEntities dbContext = new DrinkAgeEntities();
 
-            var Q2 = from p in Q
-                     group p by new { p.CommentID, p.Comment1 } into G
-                     orderby G.Sum(c => c.CommentID) descending
-                     select new { 評論內容 = G.Key.Comment1, 評論總數 = G.Sum(c => c.CommentID) };
+            //var Q = from c in dbContext.Comments
+            //        select new { c.CommentID, c.Comment1 };
 
-            this.dataGrid_Comment.DataSource = Q2.ToList();
+            //var Q2 = from p in Q
+            //         group p by new { p.CommentID, p.Comment1 } into G
+            //         orderby G.Sum(c => c.CommentID) descending
+            //         select new { 評論內容 = G.Key.Comment1, 評論總數 = G.Sum(c => c.CommentID) };
 
-        }
-
-        private void btnGPRank_Click(object sender, EventArgs e)
-        {
+            //this.dataGrid_Comment.DataSource = Q2.ToList();
 
         }
 
@@ -133,6 +147,10 @@ namespace DrinkAge_1._0
                         conn.Close();
                     }
                 }
+            }
+            else
+            {
+                return;
             }
         }
 
@@ -168,7 +186,7 @@ namespace DrinkAge_1._0
             try
             {
                 conn.Open();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter($"select S.StoreName, ProductName, P.Price, P.Comment, P.Star_AVG from Products as P inner join Store as S on P.StoreID = S.StoreID group by S.StoreName, ProductName, P.Price, P.Comment, P.Star_AVG, S.StoreName, S.StoreID, P.Comment having S.StoreID ={cboStore.SelectedIndex + 1}", conn);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter($"select S.StoreName as 店家名稱, ProductName as 產品名稱, P.Price as '價格(大杯)', P.Comment as 簡述, P.Star_AVG as 評價等級 from Products as P inner join Store as S on P.StoreID = S.StoreID group by S.StoreName, ProductName, P.Price, P.Comment, P.Star_AVG, S.StoreName, S.StoreID, P.Comment having S.StoreID ={cboStore.SelectedIndex + 1}", conn);
                 DataSet ds = new DataSet();
                 dataAdapter.Fill(ds);
                 this.dataGrid_Comment.DataSource = ds.Tables[0];
@@ -182,6 +200,22 @@ namespace DrinkAge_1._0
                 conn.Dispose();
                 conn.Close();
             }
+        }
+
+
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClearData_Click(object sender, EventArgs e)
+        {
+            this.cboCategory.ResetText();
+            this.cboCategoryDetail.ResetText();
+            this.cboStore.ResetText();
+            this.dataGrid_Comment.DataSource = null;
+
         }
     }
 }
