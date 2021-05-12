@@ -57,7 +57,7 @@ namespace DrinkAge_1._0
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.MemberPIC = new System.Windows.Forms.PictureBox();
             this.TBpanel = new System.Windows.Forms.Panel();
             this.ACHVID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -82,6 +82,7 @@ namespace DrinkAge_1._0
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -103,7 +104,7 @@ namespace DrinkAge_1._0
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberPIC)).BeginInit();
             this.TBpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -181,6 +182,8 @@ namespace DrinkAge_1._0
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 28);
             this.dataGridView1.Name = "dataGridView1";
@@ -384,7 +387,7 @@ namespace DrinkAge_1._0
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.pictureBox2);
+            this.splitContainer4.Panel2.Controls.Add(this.MemberPIC);
             this.splitContainer4.Panel2.Controls.Add(this.TBpanel);
             this.splitContainer4.Panel2.Controls.Add(this.label1);
             this.splitContainer4.Size = new System.Drawing.Size(965, 371);
@@ -427,17 +430,20 @@ namespace DrinkAge_1._0
             this.button3.TabIndex = 7;
             this.button3.Text = "更換會員圖";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // pictureBox2
+            // MemberPIC
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MemberPIC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(739, 11);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(217, 232);
-            this.pictureBox2.TabIndex = 39;
-            this.pictureBox2.TabStop = false;
+            this.MemberPIC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.MemberPIC.Image = ((System.Drawing.Image)(resources.GetObject("MemberPIC.Image")));
+            this.MemberPIC.Location = new System.Drawing.Point(739, 11);
+            this.MemberPIC.Name = "MemberPIC";
+            this.MemberPIC.Size = new System.Drawing.Size(217, 232);
+            this.MemberPIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MemberPIC.TabIndex = 39;
+            this.MemberPIC.TabStop = false;
             // 
             // TBpanel
             // 
@@ -664,6 +670,10 @@ namespace DrinkAge_1._0
             // 
             this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // LangCotrol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -697,7 +707,7 @@ namespace DrinkAge_1._0
             this.splitContainer4.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberPIC)).EndInit();
             this.TBpanel.ResumeLayout(false);
             this.TBpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -753,9 +763,10 @@ namespace DrinkAge_1._0
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.TextBox Gender;
         private System.Windows.Forms.Panel TBpanel;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox MemberPIC;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

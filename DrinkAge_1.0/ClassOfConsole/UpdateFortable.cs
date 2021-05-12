@@ -51,5 +51,13 @@ namespace DrinkAge_1._0.ClassOfConsole
             }
             dbContext.SaveChanges();
         }
+        internal void MemimgtoTable(Byte[] imgBinary, int MemID)
+        {
+            Member Mem = (from m in dbContext.Members
+                          where m.MemberID == MemID
+                          select m).FirstOrDefault();
+            Mem.MemberPIC = imgBinary;
+            dbContext.SaveChanges();
+        }
     }
 }

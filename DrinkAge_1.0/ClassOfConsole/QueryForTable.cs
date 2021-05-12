@@ -172,6 +172,14 @@ namespace DrinkAge_1._0.ClassOfConsole
             BSMem.DataSource = NMem.ToList();
             return BSMem;
         }
-        
+        internal byte[] Mem_img_Picture(int index)
+        {
+            DrinkAgeEntities dbContext_1 = new DrinkAgeEntities();
+            var img = (from n in dbContext_1.Members
+                      where n.MemberID == index
+                      select n).FirstOrDefault();
+            return img.MemberPIC;
+        }
+
     }
 }

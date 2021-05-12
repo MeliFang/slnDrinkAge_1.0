@@ -65,6 +65,6 @@ namespace DrinkAge_1._0.ClassOfConsole
             }
             return MemRowisValue;
         }
-        
     }
+    
 }

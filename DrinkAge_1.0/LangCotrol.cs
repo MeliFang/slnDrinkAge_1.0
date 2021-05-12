@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -18,7 +19,22 @@ namespace DrinkAge_1._0
             DataGQ = new DataGridviewQuery();
             QueryTowhere = new QueryForTable();
             UpForTa = new UpdateFortable();
+            this.MemberPIC.AllowDrop = true;
+            this.MemberPIC.DragDrop += PictureBox2_DragDrop;
+            this.MemberPIC.DragEnter += PictureBox2_DragEnter;
 
+
+        }
+
+        private void PictureBox2_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void PictureBox2_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] x = (string[])e.Data.GetData(DataFormats.FileDrop);
+            MemberPIC.Image = Image.FromFile(x[0]);
         }
 
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
@@ -80,7 +96,15 @@ namespace DrinkAge_1._0
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            Byte[] Bt;
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            this.MemberPIC.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            Bt = ms.GetBuffer();
+            UpForTa.MemimgtoTable(Bt, MemID);
+            bindingSource1 = QueryTowhere.MemberQueryAllorcondition(MemID);
+            bindingNavigator1.BindingSource = bindingSource1;
+            dataGridView1.DataSource = bindingSource1;
+            dataGridViewtopanel();
         }
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -98,7 +122,9 @@ namespace DrinkAge_1._0
         Dictionary<string, string> MemisRV;
         private void dataGridView1_CellClickled(object sender, DataGridViewCellEventArgs e)
         {
-            MemisRV=DataGQ.DataRowstoValue(sender);
+            int index = dataGridView1.CurrentCell.RowIndex;
+            MemID = int.Parse(dataGridView1.Rows[index].Cells[0].Value.ToString());
+            MemisRV =DataGQ.DataRowstoValue(sender);
             dataGridViewtopanel();
         }
 
@@ -126,12 +152,10 @@ namespace DrinkAge_1._0
         {
             TextboxCondValue.Text = "";
         }
-
+        int MemID;
         private void button4_Click(object sender, EventArgs e)
         {
             Dictionary<string, string> MemRVCG = new Dictionary<string, string>();
-            int i = dataGridView1.CurrentCell.RowIndex;
-            int MemID = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
             foreach (var x in TBpanel.Controls)
             {
                 if (x.GetType() == typeof(TextBox))
@@ -153,6 +177,8 @@ namespace DrinkAge_1._0
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            int index = dataGridView1.CurrentCell.RowIndex;
+            MemID = int.Parse(dataGridView1.Rows[index].Cells[0].Value.ToString());
             MemisRV = DataGQ.DataRowstoValue(sender);
             dataGridViewtopanel();
         }
@@ -167,6 +193,17 @@ namespace DrinkAge_1._0
                         (x as TextBox).Text = MemisRV[(x as TextBox).Name];
                     }
                 }
+            }
+           byte[] img =QueryTowhere.Mem_img_Picture(MemID);
+            System.IO.MemoryStream ms = new System.IO.MemoryStream(img);
+            this.MemberPIC.Image = Image.FromStream(ms);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.MemberPIC.Image = Image.FromFile(this.openFileDialog1.FileName);
             }
         }
     }
