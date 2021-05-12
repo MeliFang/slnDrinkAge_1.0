@@ -50,6 +50,11 @@ namespace DrinkAge_1._0
             }
         }
 
+        private void btnLoadData_Click(object sender, EventArgs e)
+        {
+            //LoadingCboCategory();
+        }
+
         private void LoadingCboCategory()
         {
             /* SQL DATASET combobox1自動生成可選item*/
@@ -75,6 +80,8 @@ namespace DrinkAge_1._0
                 conn.Close();
             }
         }
+
+
         private void btnComment_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=DrinkAge;Integrated Security=True");
@@ -95,6 +102,18 @@ namespace DrinkAge_1._0
                 conn.Dispose();
                 conn.Close();
             }
+
+            //DrinkAgeEntities dbContext = new DrinkAgeEntities();
+
+            //var Q = from c in dbContext.Comments
+            //        select new { c.CommentID, c.Comment1 };
+
+            //var Q2 = from p in Q
+            //         group p by new { p.CommentID, p.Comment1 } into G
+            //         orderby G.Sum(c => c.CommentID) descending
+            //         select new { 評論內容 = G.Key.Comment1, 評論總數 = G.Sum(c => c.CommentID) };
+
+            //this.dataGrid_Comment.DataSource = Q2.ToList();
 
         }
 
@@ -128,6 +147,10 @@ namespace DrinkAge_1._0
                         conn.Close();
                     }
                 }
+            }
+            else
+            {
+                return;
             }
         }
 
@@ -179,23 +202,20 @@ namespace DrinkAge_1._0
             }
         }
 
-<<<<<<< Updated upstream
-        private void btnGPRank_Click_1(object sender, EventArgs e)
-        {
 
-=======
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnClearData_Click(object sender, EventArgs e)
         {
             this.cboCategory.ResetText();
             this.cboCategoryDetail.ResetText();
             this.cboStore.ResetText();
             this.dataGrid_Comment.DataSource = null;
-        }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
->>>>>>> Stashed changes
         }
     }
 }
