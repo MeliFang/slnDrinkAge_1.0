@@ -13,10 +13,10 @@ namespace DrinkAge_1._0
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DrinkAgeEntities : DbContext
+    public partial class DrinkAgeEntities1 : DbContext
     {
-        public DrinkAgeEntities()
-            : base("name=DrinkAgeEntities")
+        public DrinkAgeEntities1()
+            : base("name=DrinkAgeEntities1")
         {
         }
     
@@ -50,6 +50,5 @@ namespace DrinkAge_1._0
         public virtual DbSet<Sugar> Sugars { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Temperature> Temperatures { get; set; }
-        public virtual DbSet<CommentDetail> CommentDetails { get; set; }
     }
 }

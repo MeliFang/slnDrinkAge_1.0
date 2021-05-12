@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DrinkAge_1._0.ClassOfConsole
 {
@@ -12,13 +14,27 @@ namespace DrinkAge_1._0.ClassOfConsole
         Dictionary<string, string> _DIC_AnyTypeForQuery = new Dictionary<string, string>();
         List<string> ComText;
         IQueryable<Member> Member;
-        
-        internal IQueryable<Member> MemberQueryAll()
+
+        internal BindingSource MemberQueryAll()
         {
-            
-            Member = from x in dbContext.Members
-                                        select x;
-            return Member;
+            var NMem = from x in dbContext.Members
+                       select new { 
+                           MemberID = x.MemberID, 
+                           Account = x.Account, 
+                           Password = x.Password, 
+                           MemberPIC = x.MemberPIC, 
+                           NickName = x.NickName, 
+                           Gender = x.Gender, 
+                           Email = x.Email, 
+                           Birth = x.Birth, 
+                           Phone = x.Phone, 
+                           evel = x.Level, 
+                           Exp = x.Exp, 
+                           Point = x.Point, 
+                           ACHVID = x.ACHVID };
+            BindingSource BSMem = new BindingSource();
+            BSMem.DataSource = NMem.ToList();
+            return BSMem;
         }
         internal IQueryable<Member> ConditionOfMember(List<string> Comvle,string Condition,string userValue)
         {

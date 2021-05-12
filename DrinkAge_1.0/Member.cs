@@ -22,6 +22,7 @@ namespace DrinkAge_1._0
             this.MemberACHVs = new HashSet<MemberACHV>();
             this.MemPointDetails = new HashSet<MemPointDetail>();
             this.Orders = new HashSet<Order>();
+            this.CommentDetails = new HashSet<CommentDetail>();
         }
     
         public int MemberID { get; set; }
@@ -48,5 +49,7 @@ namespace DrinkAge_1._0
         public virtual ICollection<MemPointDetail> MemPointDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CommentDetail> CommentDetails { get; set; }
     }
 }

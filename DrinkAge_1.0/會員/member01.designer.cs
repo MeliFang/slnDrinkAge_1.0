@@ -114,7 +114,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DrinkAge_1._0.Properties.Resources.adv01;
+            //this.pictureBox1.Image = global::DrinkAge_1._0.Properties.Resources.adv01;
             this.pictureBox1.Location = new System.Drawing.Point(67, 51);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(381, 315);
