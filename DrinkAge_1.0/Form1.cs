@@ -16,5 +16,10 @@ namespace DrinkAge_1._0
         {
             InitializeComponent();
         }
+
+        private void lblTesttoGITHUB_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("TEST!!");
+        }
     }
 }
