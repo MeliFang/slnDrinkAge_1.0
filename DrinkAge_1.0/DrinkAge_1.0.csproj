@@ -67,9 +67,10 @@
     <Compile Include="City.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ClassOfConsole\UpdateFortable.cs" />
+    <Compile Include="ClassOfConsole\Close_Open_Data.cs" />
+    <Compile Include="ClassOfConsole\Up_To_SqlData.cs" />
     <Compile Include="ClassOfConsole\DataGridviewQuery.cs" />
-    <Compile Include="ClassOfConsole\QueryForTable.cs" />
+    <Compile Include="ClassOfConsole\Query_To_Table.cs" />
     <Compile Include="Comment.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>

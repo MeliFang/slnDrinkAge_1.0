@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace DrinkAge_1._0.ClassOfConsole
 {
-    class QueryForTable
+    class Query_To_Table
     {
         DrinkAgeEntities dbContext = new DrinkAgeEntities();
         Dictionary<string, string> _DIC_AnyTypeForQuery = new Dictionary<string, string>();
@@ -18,20 +18,23 @@ namespace DrinkAge_1._0.ClassOfConsole
         internal BindingSource MemberQueryAllorcondition()
         {
             var NMem = from x in dbContext.Members
-                       select new { 
-                           MemberID = x.MemberID, 
-                           Account = x.Account, 
-                           Password = x.Password, 
-                           MemberPIC = x.MemberPIC, 
-                           NickName = x.NickName, 
-                           Gender = x.Gender, 
-                           Email = x.Email, 
-                           Birth = x.Birth, 
-                           Phone = x.Phone, 
-                           Level = x.Level, 
-                           Exp = x.Exp, 
-                           Point = x.Point, 
-                           ACHVID = x.ACHVID };
+                       select new
+                       {
+                           MemberID = x.MemberID,
+                           Account = x.Account,
+                           Password = x.Password,
+                           MemberPIC = x.MemberPIC,
+                           NickName = x.NickName,
+                           Gender = x.Gender,
+                           Email = x.Email,
+                           Birth = x.Birth,
+                           Phone = x.Phone,
+                           Level = x.Level,
+                           Exp = x.Exp,
+                           Point = x.Point,
+                           ACHVID = x.ACHVID,
+                           ACHVName = x.MemberACHVs.Select(g=>g.Achievement.ACHVName).FirstOrDefault()
+                        };
             BindingSource BSMem = new BindingSource();
             BSMem.DataSource = NMem.ToList();
             return BSMem;
@@ -54,7 +57,8 @@ namespace DrinkAge_1._0.ClassOfConsole
                            Level = x.Level,
                            Exp = x.Exp,
                            Point = x.Point,
-                           ACHVID = x.ACHVID
+                           ACHVID = x.ACHVID,
+                           ACHVName = x.MemberACHVs.Select(g => g.Achievement.ACHVName).FirstOrDefault()
                        };
             BindingSource BSMem = new BindingSource();
             BSMem.DataSource = NMem.ToList();
@@ -165,8 +169,8 @@ namespace DrinkAge_1._0.ClassOfConsole
                            Phone = x.Phone,
                            Level = x.Level,
                            Exp = x.Exp,
-                           Point = x.Point,
-                           ACHVID = x.ACHVID
+                           ACHVID = x.ACHVID,
+                           ACHVName = x.MemberACHVs.Select(g => g.Achievement.ACHVName).FirstOrDefault()
                        };
             BindingSource BSMem = new BindingSource();
             BSMem.DataSource = NMem.ToList();
@@ -179,6 +183,18 @@ namespace DrinkAge_1._0.ClassOfConsole
                       where n.MemberID == index
                       select n).FirstOrDefault();
             return img.MemberPIC;
+        }
+        internal List<string> Mem_ACHVID_Combo(int dex)
+        {
+            List<string> MemACHV = new List<string>();
+            var MemACHVID = from n in dbContext.MemberACHVs
+                            where n.MemberID == dex
+                            select new {n.ACHVID};
+            foreach (var MA in MemACHVID)
+            {
+                MemACHV.Add(MA.ACHVID.Value.ToString());
+            }
+            return MemACHV;
         }
 
     }

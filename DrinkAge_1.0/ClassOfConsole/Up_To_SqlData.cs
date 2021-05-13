@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DrinkAge_1._0.ClassOfConsole
 {
-    class UpdateFortable
+    class Up_To_SqlData
     {
         DrinkAgeEntities dbContext = new DrinkAgeEntities();
         internal void MemUpdate(Dictionary<string, string> MemCGV,int index)

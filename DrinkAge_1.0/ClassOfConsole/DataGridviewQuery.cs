@@ -12,7 +12,7 @@ namespace DrinkAge_1._0.ClassOfConsole
         internal List<string> Comvle;
         internal List<string> DGColumntoCom(object sender)
         {
-            List<string> comparison = new List<string>() { "Password", "MemberPIC", "Exp", "Point" };
+            List<string> comparison = new List<string>() { "Password", "MemberPIC", "Exp", "Point","ACHVName" };
             List<string> Com = new List<string>();
             DataGridView Header = sender as DataGridView;
             bool difference = true;
