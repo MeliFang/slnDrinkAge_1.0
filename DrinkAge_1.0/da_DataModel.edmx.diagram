@@ -61,6 +61,9 @@
         <AssociationConnector Association="DrinkAgeModel.FK_Store_Region" ManuallyRouted="false" />
         <AssociationConnector Association="DrinkAgeModel.FK_StoreDiscount_Store" ManuallyRouted="false" />
         <AssociationConnector Association="DrinkAgeModel.FK_StoreIngredientPrice_Store" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DrinkAgeModel.CommentDetail" Width="1.5" PointX="8.25" PointY="18" />
+        <AssociationConnector Association="DrinkAgeModel.FK_CommentDetail_Comment" />
+        <AssociationConnector Association="DrinkAgeModel.FK_CommentDetail_member" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

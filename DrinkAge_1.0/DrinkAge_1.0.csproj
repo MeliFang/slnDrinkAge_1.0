@@ -74,6 +74,9 @@
     <Compile Include="Comment.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CommentDetail.cs">
+      <DependentUpon>da_DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="da_DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,6 +106,24 @@
     <Compile Include="FavoriteStore.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormLiang1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLiang1.designer.cs">
+      <DependentUpon>FormLiang1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIndex.designer.cs">
+      <DependentUpon>FrmIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLuck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLuck.designer.cs">
+      <DependentUpon>FrmLuck.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSearch_Fang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +151,12 @@
     <Compile Include="Order.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="orders.designer.cs">
+      <DependentUpon>orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order_Detail.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
@@ -148,6 +175,12 @@
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Size.cs">
+      <DependentUpon>da_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>da_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>da_DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Store.cs">
@@ -194,11 +227,23 @@
     </Compile>
     <Compile Include="會員\modes\CViewBag.cs" />
     <Compile Include="會員\modes\CViewid.cs" />
+    <EmbeddedResource Include="FormLiang1.resx">
+      <DependentUpon>FormLiang1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIndex.resx">
+      <DependentUpon>FrmIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLuck.resx">
+      <DependentUpon>FrmLuck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSearch_Fang.resx">
       <DependentUpon>FrmSearch_Fang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LangCotrol.resx">
       <DependentUpon>LangCotrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="orders.resx">
+      <DependentUpon>orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

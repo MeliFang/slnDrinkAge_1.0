@@ -26,6 +26,7 @@ namespace DrinkAge_1._0
         public int StoreID { get; set; }
         public System.DateTime OrderDate { get; set; }
         public System.DateTime ArrivedDate { get; set; }
+        public Nullable<bool> Display { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Member Member { get; set; }

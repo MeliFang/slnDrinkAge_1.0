@@ -1,9 +1,9 @@
 ﻿using DrinkAge_1._0.ClassOfConsole;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using System.Reflection;
-using System.Collections.Generic;
+
 
 namespace DrinkAge_1._0
 {
@@ -15,7 +15,10 @@ namespace DrinkAge_1._0
         public LangCotrol()
         {
             InitializeComponent();
-            
+            DataGQ = new DataGridviewQuery();
+            QueryTowhere = new QueryForTable();
+            UpForTa = new UpdateFortable();
+
         }
 
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
@@ -26,10 +29,7 @@ namespace DrinkAge_1._0
         List<string> combo;
         private void button1_Click(object sender, EventArgs e)
         {
-            DataGQ = new DataGridviewQuery();
-            QueryTowhere = new QueryForTable();
-            Mem = QueryTowhere.MemberQueryAll();
-            bindingSource1.DataSource = Mem.ToList();
+            bindingSource1 = (BindingSource)QueryTowhere.MemberQueryAll();
             bindingNavigator1.BindingSource = bindingSource1;
             dataGridView1.DataSource = bindingSource1;
             combo=DataGQ.DGColumntoCom(dataGridView1);
@@ -47,8 +47,7 @@ namespace DrinkAge_1._0
             }
             else
             {
-                QueryTowhere = new QueryForTable();
-                Mem = QueryTowhere.ConditionOfMember(combo,ComboboxCondT.Text,TextboxCondValue.Text);
+                Mem = (IQueryable<Member>)QueryTowhere.ConditionOfMember(combo,ComboboxCondT.Text,TextboxCondValue.Text);
                 if (Mem == null || Mem.ToList().Count() == 0)
                 {
                     MessageBox.Show("查無此資料");
@@ -58,8 +57,6 @@ namespace DrinkAge_1._0
                     bindingSource1.DataSource = Mem.ToList();
                     bindingNavigator1.BindingSource = bindingSource1;
                     dataGridView1.DataSource = bindingSource1;
-                    //ComboboxCondT.Text = "";
-                    //TextboxCondValue.Text = "";
                 }
                 
             }
@@ -72,11 +69,9 @@ namespace DrinkAge_1._0
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            QueryTowhere = new QueryForTable();
-            UpForTa = new UpdateFortable();
             TBCT=TBMemRVchange.Text;
             UpForTa.MemUpdate(TBCT,DGVC,bindingSource1.Position);
-            Mem = QueryTowhere.ConditionOfMember(combo, ComboboxCondT.Text, TextboxCondValue.Text);
+            Mem = (IQueryable<Member>)QueryTowhere.ConditionOfMember(combo, ComboboxCondT.Text, TextboxCondValue.Text);
             bindingSource1.DataSource = Mem.ToList();
             bindingNavigator1.BindingSource = bindingSource1;
             dataGridView1.DataSource = bindingSource1;

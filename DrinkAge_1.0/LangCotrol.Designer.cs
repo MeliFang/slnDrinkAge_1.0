@@ -91,9 +91,10 @@ namespace DrinkAge_1._0
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(3, 37);
+            this.button2.Location = new System.Drawing.Point(4, 46);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 28);
+            this.button2.Size = new System.Drawing.Size(145, 35);
             this.button2.TabIndex = 3;
             this.button2.Text = "條件搜索";
             this.button2.UseVisualStyleBackColor = true;
@@ -103,18 +104,20 @@ namespace DrinkAge_1._0
             // 
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(213, 208);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // Memberdisplay
             // 
             this.Memberdisplay.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Memberdisplay.Location = new System.Drawing.Point(3, 3);
+            this.Memberdisplay.Location = new System.Drawing.Point(4, 4);
+            this.Memberdisplay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Memberdisplay.Name = "Memberdisplay";
-            this.Memberdisplay.Size = new System.Drawing.Size(108, 28);
+            this.Memberdisplay.Size = new System.Drawing.Size(144, 35);
             this.Memberdisplay.TabIndex = 1;
             this.Memberdisplay.Text = "總會員顯示";
             this.Memberdisplay.UseVisualStyleBackColor = true;
@@ -124,17 +127,19 @@ namespace DrinkAge_1._0
             // 
             this.ComboboxCondT.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.ComboboxCondT.FormattingEnabled = true;
-            this.ComboboxCondT.Location = new System.Drawing.Point(117, 41);
+            this.ComboboxCondT.Location = new System.Drawing.Point(156, 51);
+            this.ComboboxCondT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ComboboxCondT.Name = "ComboboxCondT";
-            this.ComboboxCondT.Size = new System.Drawing.Size(113, 24);
+            this.ComboboxCondT.Size = new System.Drawing.Size(149, 28);
             this.ComboboxCondT.TabIndex = 4;
             // 
             // TextboxCondValue
             // 
             this.TextboxCondValue.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TextboxCondValue.Location = new System.Drawing.Point(5, 71);
+            this.TextboxCondValue.Location = new System.Drawing.Point(7, 89);
+            this.TextboxCondValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TextboxCondValue.Name = "TextboxCondValue";
-            this.TextboxCondValue.Size = new System.Drawing.Size(225, 27);
+            this.TextboxCondValue.Size = new System.Drawing.Size(299, 31);
             this.TextboxCondValue.TabIndex = 5;
             this.TextboxCondValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ComboboxCondT_MouseDown);
             // 
@@ -143,9 +148,10 @@ namespace DrinkAge_1._0
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("標楷體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(120, 171);
+            this.button1.Location = new System.Drawing.Point(160, 214);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 28);
+            this.button1.Size = new System.Drawing.Size(205, 35);
             this.button1.TabIndex = 6;
             this.button1.Text = "儲存更改";
             this.button1.UseVisualStyleBackColor = true;
@@ -159,10 +165,12 @@ namespace DrinkAge_1._0
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 35);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(961, 248);
+            this.dataGridView1.Size = new System.Drawing.Size(1285, 311);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
@@ -172,6 +180,7 @@ namespace DrinkAge_1._0
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -182,8 +191,9 @@ namespace DrinkAge_1._0
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1158, 695);
-            this.splitContainer1.SplitterDistance = 173;
+            this.splitContainer1.Size = new System.Drawing.Size(1544, 869);
+            this.splitContainer1.SplitterDistance = 230;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 3;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
@@ -192,33 +202,37 @@ namespace DrinkAge_1._0
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.pictureBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(173, 695);
-            this.splitContainer2.SplitterDistance = 175;
+            this.splitContainer2.Size = new System.Drawing.Size(230, 869);
+            this.splitContainer2.SplitterDistance = 218;
+            this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 2;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.DAMember);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 3);
+            this.tabControl1.Location = new System.Drawing.Point(0, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(979, 690);
+            this.tabControl1.Size = new System.Drawing.Size(1305, 862);
             this.tabControl1.TabIndex = 0;
             // 
             // DAMember
             // 
             this.DAMember.Controls.Add(this.splitContainer3);
-            this.DAMember.Location = new System.Drawing.Point(4, 22);
+            this.DAMember.Location = new System.Drawing.Point(4, 25);
+            this.DAMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DAMember.Name = "DAMember";
-            this.DAMember.Padding = new System.Windows.Forms.Padding(3);
-            this.DAMember.Size = new System.Drawing.Size(971, 664);
+            this.DAMember.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DAMember.Size = new System.Drawing.Size(1297, 833);
             this.DAMember.TabIndex = 2;
             this.DAMember.Text = "DAMember";
             this.DAMember.UseVisualStyleBackColor = true;
@@ -227,7 +241,8 @@ namespace DrinkAge_1._0
             // 
             this.splitContainer3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer3.Location = new System.Drawing.Point(4, 4);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -239,8 +254,9 @@ namespace DrinkAge_1._0
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(965, 658);
-            this.splitContainer3.SplitterDistance = 283;
+            this.splitContainer3.Size = new System.Drawing.Size(1289, 825);
+            this.splitContainer3.SplitterDistance = 354;
+            this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 1;
             // 
             // bindingNavigator1
@@ -249,6 +265,7 @@ namespace DrinkAge_1._0
             this.bindingNavigator1.BackColor = System.Drawing.Color.Pink;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -266,14 +283,14 @@ namespace DrinkAge_1._0
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(961, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(1285, 27);
             this.bindingNavigator1.TabIndex = 4;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(27, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "/{0}";
             this.bindingNavigatorCountItem.ToolTipText = "項目總數";
             // 
@@ -283,7 +300,7 @@ namespace DrinkAge_1._0
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "移到最前面";
             // 
             // bindingNavigatorMovePreviousItem
@@ -292,13 +309,13 @@ namespace DrinkAge_1._0
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "移到上一個";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -306,14 +323,14 @@ namespace DrinkAge_1._0
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "目前的位置";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -321,7 +338,7 @@ namespace DrinkAge_1._0
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "移到下一個";
             // 
             // bindingNavigatorMoveLastItem
@@ -330,19 +347,20 @@ namespace DrinkAge_1._0
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "移到最後面";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // splitContainer4
             // 
             this.splitContainer4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
@@ -361,17 +379,19 @@ namespace DrinkAge_1._0
             this.splitContainer4.Panel2.Controls.Add(this.label2);
             this.splitContainer4.Panel2.Controls.Add(this.label1);
             this.splitContainer4.Panel2.Controls.Add(this.button1);
-            this.splitContainer4.Size = new System.Drawing.Size(965, 371);
-            this.splitContainer4.SplitterDistance = 333;
+            this.splitContainer4.Size = new System.Drawing.Size(1289, 466);
+            this.splitContainer4.SplitterDistance = 444;
+            this.splitContainer4.SplitterWidth = 5;
             this.splitContainer4.TabIndex = 7;
             // 
             // LabelMemRow
             // 
             this.LabelMemRow.AutoSize = true;
             this.LabelMemRow.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LabelMemRow.Location = new System.Drawing.Point(113, 72);
+            this.LabelMemRow.Location = new System.Drawing.Point(151, 90);
+            this.LabelMemRow.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelMemRow.Name = "LabelMemRow";
-            this.LabelMemRow.Size = new System.Drawing.Size(119, 19);
+            this.LabelMemRow.Size = new System.Drawing.Size(140, 24);
             this.LabelMemRow.TabIndex = 14;
             this.LabelMemRow.Text = "----------";
             // 
@@ -379,26 +399,29 @@ namespace DrinkAge_1._0
             // 
             this.LabelMemColum.AutoSize = true;
             this.LabelMemColum.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LabelMemColum.Location = new System.Drawing.Point(113, 20);
+            this.LabelMemColum.Location = new System.Drawing.Point(151, 25);
+            this.LabelMemColum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelMemColum.Name = "LabelMemColum";
-            this.LabelMemColum.Size = new System.Drawing.Size(119, 19);
+            this.LabelMemColum.Size = new System.Drawing.Size(140, 24);
             this.LabelMemColum.TabIndex = 13;
             this.LabelMemColum.Text = "----------";
             // 
             // TBMemRVchange
             // 
-            this.TBMemRVchange.Location = new System.Drawing.Point(100, 121);
+            this.TBMemRVchange.Location = new System.Drawing.Point(133, 151);
+            this.TBMemRVchange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TBMemRVchange.Name = "TBMemRVchange";
-            this.TBMemRVchange.Size = new System.Drawing.Size(171, 22);
+            this.TBMemRVchange.Size = new System.Drawing.Size(227, 25);
             this.TBMemRVchange.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(3, 124);
+            this.label3.Location = new System.Drawing.Point(4, 155);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 19);
+            this.label3.Size = new System.Drawing.Size(123, 24);
             this.label3.TabIndex = 11;
             this.label3.Text = "欲修改值:";
             // 
@@ -406,9 +429,10 @@ namespace DrinkAge_1._0
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(3, 71);
+            this.label2.Location = new System.Drawing.Point(4, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 19);
+            this.label2.Size = new System.Drawing.Size(123, 24);
             this.label2.TabIndex = 9;
             this.label2.Text = "目前數值:";
             // 
@@ -416,18 +440,20 @@ namespace DrinkAge_1._0
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(3, 20);
+            this.label1.Location = new System.Drawing.Point(4, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 19);
+            this.label1.Size = new System.Drawing.Size(123, 24);
             this.label1.TabIndex = 7;
             this.label1.Text = "目前欄位:";
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(971, 664);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1297, 833);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -438,10 +464,11 @@ namespace DrinkAge_1._0
             // 
             // LangCotrol
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 695);
+            this.ClientSize = new System.Drawing.Size(1544, 869);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LangCotrol";
             this.Text = "LangCotrol";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

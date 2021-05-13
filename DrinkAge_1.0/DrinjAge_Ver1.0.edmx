@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DrinkAgeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DrinkAgeModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Achievements">
           <Key>
             <PropertyRef Name="ACHVID" />
@@ -44,21 +44,8 @@
           <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductID" Type="int" />
           <Property Name="Comment" Type="nvarchar" MaxLength="50" />
-          <Property Name="Picture" Type="varbinary(max)" />
           <Property Name="Star" Type="int" />
           <Property Name="GP_Quantity" Type="int" />
-          <Property Name="BP_Quantity" Type="int" />
-          <Property Name="Display" Type="bit" />
-        </EntityType>
-        <EntityType Name="CommentDetail">
-          <Key>
-            <PropertyRef Name="CommentDetailID" />
-          </Key>
-          <Property Name="CommentDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MemberID" Type="int" />
-          <Property Name="CommentID" Type="int" />
-          <Property Name="GP" Type="int" />
-          <Property Name="BP" Type="int" />
         </EntityType>
         <EntityType Name="Employees">
           <Key>
@@ -148,13 +135,12 @@
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
-          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MemberID" Type="int" Nullable="false" />
           <Property Name="EmployeeID" Type="int" />
           <Property Name="StoreID" Type="int" Nullable="false" />
           <Property Name="OrderDate" Type="date" Nullable="false" />
           <Property Name="ArrivedDate" Type="date" Nullable="false" />
-          <Property Name="Display" Type="bit" />
         </EntityType>
         <EntityType Name="Points Mall">
           <Key>
@@ -302,30 +288,6 @@
             </Principal>
             <Dependent Role="Comment">
               <PropertyRef Name="ProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CommentDetail_Comment">
-          <End Role="Comment" Type="Self.Comment" Multiplicity="0..1" />
-          <End Role="CommentDetail" Type="Self.CommentDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Comment">
-              <PropertyRef Name="CommentID" />
-            </Principal>
-            <Dependent Role="CommentDetail">
-              <PropertyRef Name="CommentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CommentDetail_member">
-          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
-          <End Role="CommentDetail" Type="Self.CommentDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Member">
-              <PropertyRef Name="MemberID" />
-            </Principal>
-            <Dependent Role="CommentDetail">
-              <PropertyRef Name="MemberID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -653,44 +615,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <EntityContainer Name="DrinkAgeModelStoreContainer">
+        <EntityContainer Name="DrinkAgeModel1StoreContainer">
           <EntitySet Name="Achievements" EntityType="Self.Achievements" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoryDetail" EntityType="Self.CategoryDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CommentDetail" EntityType="Self.CommentDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FavoriteProducts" EntityType="Self.FavoriteProducts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FavoriteStore" EntityType="Self.FavoriteStore" Schema="dbo" store:Type="Tables" />
@@ -726,14 +656,6 @@
           <AssociationSet Name="FK_Comment_Products" Association="Self.FK_Comment_Products">
             <End Role="Products" EntitySet="Products" />
             <End Role="Comment" EntitySet="Comment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CommentDetail_Comment" Association="Self.FK_CommentDetail_Comment">
-            <End Role="Comment" EntitySet="Comment" />
-            <End Role="CommentDetail" EntitySet="CommentDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CommentDetail_member" Association="Self.FK_CommentDetail_member">
-            <End Role="Member" EntitySet="Member" />
-            <End Role="CommentDetail" EntitySet="CommentDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_favoriteProducts_member" Association="Self.FK_favoriteProducts_member">
             <End Role="Member" EntitySet="Member" />
@@ -844,10 +766,11 @@
             <End Role="StoreIngredientPrice" EntitySet="StoreIngredientPrice" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DrinkAgeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DrinkAgeModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Achievement">
           <Key>
             <PropertyRef Name="ACHVID" />
@@ -873,7 +796,7 @@
           <Key>
             <PropertyRef Name="CategoryDetailID" />
           </Key>
-          <Property Name="CategoryDetailID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryID" Type="Int32" Nullable="false" />
           <Property Name="CategoryDetailName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Achievements" Relationship="Self.FK_Achievements_CategoryDetail" FromRole="CategoryDetail" ToRole="Achievements" />
@@ -898,10 +821,6 @@
           <Property Name="Star" Type="Int32" />
           <Property Name="GP_Quantity" Type="Int32" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Comment_Products" FromRole="Comment" ToRole="Products" />
-          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="BP_Quantity" Type="Int32" />
-          <Property Name="Display" Type="Boolean" />
-          <NavigationProperty Name="CommentDetails" Relationship="DrinkAgeModel.FK_CommentDetail_Comment" FromRole="Comment" ToRole="CommentDetail" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -965,7 +884,6 @@
           <NavigationProperty Name="MemberACHVs" Relationship="Self.FK_memberACHV_member" FromRole="Member" ToRole="MemberACHV" />
           <NavigationProperty Name="MemPointDetails" Relationship="Self.FK_memPointDetails_member" FromRole="Member" ToRole="MemPointDetails" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_member" FromRole="Member" ToRole="Orders" />
-          <NavigationProperty Name="CommentDetails" Relationship="DrinkAgeModel.FK_CommentDetail_member" FromRole="Member" ToRole="CommentDetail" />
         </EntityType>
         <EntityType Name="MemberACHV">
           <Key>
@@ -1015,7 +933,7 @@
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
-          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MemberID" Type="Int32" Nullable="false" />
           <Property Name="EmployeeID" Type="Int32" />
           <Property Name="StoreID" Type="Int32" Nullable="false" />
@@ -1025,7 +943,6 @@
           <NavigationProperty Name="Member" Relationship="Self.FK_Orders_member" FromRole="Orders" ToRole="Member" />
           <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Orders" FromRole="Orders" ToRole="Order_Details" />
           <NavigationProperty Name="Store" Relationship="Self.FK_Orders_Store" FromRole="Orders" ToRole="Store" />
-          <Property Name="Display" Type="Boolean" />
         </EntityType>
         <EntityType Name="Points_Mall">
           <Key>
@@ -1526,7 +1443,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DrinkAgeEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DrinkAgeEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Achievements" EntityType="Self.Achievement" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="CategoryDetails" EntityType="Self.CategoryDetail" />
@@ -1676,101 +1593,15 @@
             <End Role="Store" EntitySet="Stores" />
             <End Role="StoreIngredientPrice" EntitySet="StoreIngredientPrices" />
           </AssociationSet>
-          <EntitySet Name="CommentDetails" EntityType="DrinkAgeModel.CommentDetail" />
-          <AssociationSet Name="FK_CommentDetail_Comment" Association="DrinkAgeModel.FK_CommentDetail_Comment">
-            <End Role="Comment" EntitySet="Comments" />
-            <End Role="CommentDetail" EntitySet="CommentDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CommentDetail_member" Association="DrinkAgeModel.FK_CommentDetail_member">
-            <End Role="Member" EntitySet="Members" />
-            <End Role="CommentDetail" EntitySet="CommentDetails" />
-          </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DrinkAgeModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DrinkAgeModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <EntityType Name="CommentDetail">
-          <Key>
-            <PropertyRef Name="CommentDetailID" />
-          </Key>
-          <Property Name="CommentDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MemberID" Type="Int32" />
-          <Property Name="CommentID" Type="Int32" />
-          <Property Name="GP" Type="Int32" />
-          <Property Name="BP" Type="Int32" />
-          <NavigationProperty Name="Comment" Relationship="DrinkAgeModel.FK_CommentDetail_Comment" FromRole="CommentDetail" ToRole="Comment" />
-          <NavigationProperty Name="Member" Relationship="DrinkAgeModel.FK_CommentDetail_member" FromRole="CommentDetail" ToRole="Member" />
-        </EntityType>
-        <Association Name="FK_CommentDetail_Comment">
-          <End Type="DrinkAgeModel.Comment" Role="Comment" Multiplicity="0..1" />
-          <End Type="DrinkAgeModel.CommentDetail" Role="CommentDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Comment">
-              <PropertyRef Name="CommentID" />
-            </Principal>
-            <Dependent Role="CommentDetail">
-              <PropertyRef Name="CommentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CommentDetail_member">
-          <End Type="DrinkAgeModel.Member" Role="Member" Multiplicity="0..1" />
-          <End Type="DrinkAgeModel.CommentDetail" Role="CommentDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Member">
-              <PropertyRef Name="MemberID" />
-            </Principal>
-            <Dependent Role="CommentDetail">
-              <PropertyRef Name="MemberID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DrinkAgeModelStoreContainer" CdmEntityContainer="DrinkAgeEntities">
+        <EntityContainerMapping StorageEntityContainer="DrinkAgeModel1StoreContainer" CdmEntityContainer="DrinkAgeEntities1">
           <EntitySetMapping Name="Achievements">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Achievement">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Achievement">
               <MappingFragment StoreEntitySet="Achievements">
                 <ScalarProperty Name="ACHVID" ColumnName="ACHVID" />
                 <ScalarProperty Name="ACHVName" ColumnName="ACHVName" />
@@ -1781,7 +1612,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Category">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -1789,7 +1620,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CategoryDetails">
-            <EntityTypeMapping TypeName="DrinkAgeModel.CategoryDetail">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.CategoryDetail">
               <MappingFragment StoreEntitySet="CategoryDetail">
                 <ScalarProperty Name="CategoryDetailID" ColumnName="CategoryDetailID" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
@@ -1798,7 +1629,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cities">
-            <EntityTypeMapping TypeName="DrinkAgeModel.City">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.City">
               <MappingFragment StoreEntitySet="City">
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="CityName" ColumnName="CityName" />
@@ -1806,11 +1637,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Comments">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Comment">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Comment">
               <MappingFragment StoreEntitySet="Comment">
-                <ScalarProperty Name="Display" ColumnName="Display" />
-                <ScalarProperty Name="BP_Quantity" ColumnName="BP_Quantity" />
-                <ScalarProperty Name="Picture" ColumnName="Picture" />
                 <ScalarProperty Name="CommentID" ColumnName="CommentID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="Comment1" ColumnName="Comment" />
@@ -1820,7 +1648,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Employee">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Employee">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
@@ -1831,7 +1659,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FavoriteProducts">
-            <EntityTypeMapping TypeName="DrinkAgeModel.FavoriteProduct">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.FavoriteProduct">
               <MappingFragment StoreEntitySet="FavoriteProducts">
                 <ScalarProperty Name="FavoriteProductID" ColumnName="FavoriteProductID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
@@ -1840,7 +1668,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FavoriteStores">
-            <EntityTypeMapping TypeName="DrinkAgeModel.FavoriteStore">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.FavoriteStore">
               <MappingFragment StoreEntitySet="FavoriteStore">
                 <ScalarProperty Name="FavoriteStoreID" ColumnName="FavoriteStoreID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
@@ -1849,7 +1677,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Ingredients">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Ingredient">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Ingredient">
               <MappingFragment StoreEntitySet="Ingredients">
                 <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
                 <ScalarProperty Name="IngredientName" ColumnName="IngredientName" />
@@ -1857,7 +1685,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Members">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Member">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Member">
               <MappingFragment StoreEntitySet="Member">
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="Account" ColumnName="Account" />
@@ -1876,7 +1704,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MemberACHVs">
-            <EntityTypeMapping TypeName="DrinkAgeModel.MemberACHV">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.MemberACHV">
               <MappingFragment StoreEntitySet="MemberACHV">
                 <ScalarProperty Name="MemberACHVID" ColumnName="MemberACHVID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
@@ -1885,7 +1713,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MemPointDetails">
-            <EntityTypeMapping TypeName="DrinkAgeModel.MemPointDetail">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.MemPointDetail">
               <MappingFragment StoreEntitySet="MemPointDetails">
                 <ScalarProperty Name="MemPointDetail_ID" ColumnName="MemPointDetail_ID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
@@ -1895,7 +1723,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Order_Details">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Order_Detail">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Order_Detail">
               <MappingFragment StoreEntitySet="Order Details">
                 <ScalarProperty Name="OrderDetail_ID" ColumnName="OrderDetail_ID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
@@ -1912,9 +1740,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Order">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Order">
               <MappingFragment StoreEntitySet="Orders">
-                <ScalarProperty Name="Display" ColumnName="Display" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
@@ -1925,7 +1752,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Points_Malls">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Points_Mall">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Points_Mall">
               <MappingFragment StoreEntitySet="Points Mall">
                 <ScalarProperty Name="PointItemID" ColumnName="PointItemID" />
                 <ScalarProperty Name="PointItemName" ColumnName="PointItemName" />
@@ -1936,7 +1763,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Product">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Product">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductPhoto" ColumnName="ProductPhoto" />
@@ -1951,7 +1778,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductSizePrices">
-            <EntityTypeMapping TypeName="DrinkAgeModel.ProductSizePrice">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.ProductSizePrice">
               <MappingFragment StoreEntitySet="ProductSizePrice">
                 <ScalarProperty Name="ProductSizePriceID" ColumnName="ProductSizePriceID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -1961,7 +1788,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Regions">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Region">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Region">
               <MappingFragment StoreEntitySet="Region">
                 <ScalarProperty Name="RegionID" ColumnName="RegionID" />
                 <ScalarProperty Name="RegionName" ColumnName="RegionName" />
@@ -1970,7 +1797,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sizes">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Size">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Size">
               <MappingFragment StoreEntitySet="Size">
                 <ScalarProperty Name="SizeID" ColumnName="SizeID" />
                 <ScalarProperty Name="SizeName" ColumnName="SizeName" />
@@ -1978,7 +1805,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Stores">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Store">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Store">
               <MappingFragment StoreEntitySet="Store">
                 <ScalarProperty Name="StoreID" ColumnName="StoreID" />
                 <ScalarProperty Name="StoreName" ColumnName="StoreName" />
@@ -1990,7 +1817,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StoreDiscounts">
-            <EntityTypeMapping TypeName="DrinkAgeModel.StoreDiscount">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.StoreDiscount">
               <MappingFragment StoreEntitySet="StoreDiscount">
                 <ScalarProperty Name="StoreDiscountID" ColumnName="StoreDiscountID" />
                 <ScalarProperty Name="StoreDiscountName" ColumnName="StoreDiscountName" />
@@ -2000,7 +1827,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StoreIngredientPrices">
-            <EntityTypeMapping TypeName="DrinkAgeModel.StoreIngredientPrice">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.StoreIngredientPrice">
               <MappingFragment StoreEntitySet="StoreIngredientPrice">
                 <ScalarProperty Name="StoreIngredientPriceID" ColumnName="StoreIngredientPriceID" />
                 <ScalarProperty Name="StoreID" ColumnName="StoreID" />
@@ -2010,7 +1837,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sugars">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Sugar">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Sugar">
               <MappingFragment StoreEntitySet="Sugar">
                 <ScalarProperty Name="SugarID" ColumnName="SugarID" />
                 <ScalarProperty Name="SugarName" ColumnName="SugarName" />
@@ -2018,7 +1845,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DrinkAgeModel.sysdiagram">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -2029,48 +1856,13 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Temperatures">
-            <EntityTypeMapping TypeName="DrinkAgeModel.Temperature">
+            <EntityTypeMapping TypeName="DrinkAgeModel1.Temperature">
               <MappingFragment StoreEntitySet="Temperature">
                 <ScalarProperty Name="TemperatureID" ColumnName="TemperatureID" />
                 <ScalarProperty Name="TemperatureName" ColumnName="TemperatureName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CommentDetails">
-            <EntityTypeMapping TypeName="DrinkAgeModel.CommentDetail">
-              <MappingFragment StoreEntitySet="CommentDetail">
-                <ScalarProperty Name="BP" ColumnName="BP" />
-                <ScalarProperty Name="GP" ColumnName="GP" />
-                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <ScalarProperty Name="CommentDetailID" ColumnName="CommentDetailID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DrinkAgeModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DrinkAgeModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DrinkAgeModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DrinkAgeModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DrinkAgeModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DrinkAgeModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DrinkAgeModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DrinkAgeModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DrinkAgeModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
