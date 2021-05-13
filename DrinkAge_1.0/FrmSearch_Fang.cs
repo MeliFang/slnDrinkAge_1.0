@@ -201,9 +201,6 @@ namespace DrinkAge_1._0
                 conn.Close();
             }
         }
-
- 
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -215,7 +212,8 @@ namespace DrinkAge_1._0
             this.cboCategoryDetail.ResetText();
             this.cboStore.ResetText();
             this.dataGrid_Comment.DataSource = null;
-          
+
+
         }
     }
 }

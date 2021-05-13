@@ -52,6 +52,7 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "忘記密碼";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -80,6 +81,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(580, 173);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '●';
             this.textBox2.Size = new System.Drawing.Size(113, 22);
             this.textBox2.TabIndex = 10;
             // 
@@ -112,7 +114,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DrinkAge_1._0.Properties.Resources.adv01;
+            //this.pictureBox1.Image = global::DrinkAge_1._0.Properties.Resources.adv01;
             this.pictureBox1.Location = new System.Drawing.Point(67, 51);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(381, 315);

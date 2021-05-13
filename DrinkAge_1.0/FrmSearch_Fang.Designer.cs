@@ -29,9 +29,15 @@ namespace DrinkAge_1._0
         /// </summary>
         private void InitializeComponent()
         {
+            this.da_DataSet1 = new DrinkAge_1._0.da_DataSet();
+            this.storeTableAdapter1 = new DrinkAge_1._0.da_DataSetTableAdapters.StoreTableAdapter();
+            this.categoryTableAdapter1 = new DrinkAge_1._0.da_DataSetTableAdapters.CategoryTableAdapter();
+            this.categoryDetailTableAdapter1 = new DrinkAge_1._0.da_DataSetTableAdapters.CategoryDetailTableAdapter();
+            this.productsTableAdapter1 = new DrinkAge_1._0.da_DataSetTableAdapters.ProductsTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboCategoryDetail = new System.Windows.Forms.ComboBox();
+            this.commentTableAdapter1 = new DrinkAge_1._0.da_DataSetTableAdapters.CommentTableAdapter();
             this.btnClearData = new System.Windows.Forms.Button();
             this.btnComment = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,10 +47,34 @@ namespace DrinkAge_1._0
             this.cboStore = new System.Windows.Forms.ComboBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.dataGrid_Comment = new System.Windows.Forms.DataGridView();
+            this.da_DataSet2 = new DrinkAge_1._0.da_DataSet();
             this.btnClose = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.da_DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Comment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.da_DataSet2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // da_DataSet1
+            // 
+            this.da_DataSet1.DataSetName = "da_DataSet";
+            this.da_DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // storeTableAdapter1
+            // 
+            this.storeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // categoryTableAdapter1
+            // 
+            this.categoryTableAdapter1.ClearBeforeFill = true;
+            // 
+            // categoryDetailTableAdapter1
+            // 
+            this.categoryDetailTableAdapter1.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
             // 
             // label2
             // 
@@ -52,7 +82,7 @@ namespace DrinkAge_1._0
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.Location = new System.Drawing.Point(12, 161);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 22);
+            this.label2.Size = new System.Drawing.Size(96, 27);
             this.label2.TabIndex = 25;
             this.label2.Text = "類別細項";
             // 
@@ -62,7 +92,7 @@ namespace DrinkAge_1._0
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.Location = new System.Drawing.Point(46, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 22);
+            this.label1.Size = new System.Drawing.Size(54, 27);
             this.label1.TabIndex = 24;
             this.label1.Text = "類別";
             // 
@@ -75,12 +105,27 @@ namespace DrinkAge_1._0
             this.cboCategoryDetail.Location = new System.Drawing.Point(112, 158);
             this.cboCategoryDetail.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboCategoryDetail.Name = "cboCategoryDetail";
-            this.cboCategoryDetail.Size = new System.Drawing.Size(169, 30);
+            this.cboCategoryDetail.Size = new System.Drawing.Size(169, 33);
             this.cboCategoryDetail.TabIndex = 23;
             this.cboCategoryDetail.SelectedIndexChanged += new System.EventHandler(this.cboCategoryDetail_SelectedIndexChanged);
             // 
+            // commentTableAdapter1
+            // 
+            this.commentTableAdapter1.ClearBeforeFill = true;
+            // 
             // btnClearData
             // 
+
+            //this.btnLoadData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            //this.btnLoadData.Location = new System.Drawing.Point(196, 13);
+            //this.btnLoadData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            //this.btnLoadData.Name = "btnLoadData";
+            //this.btnLoadData.Size = new System.Drawing.Size(117, 56);
+            //this.btnLoadData.TabIndex = 22;
+            //this.btnLoadData.Text = "Load Data";
+            //this.btnLoadData.UseVisualStyleBackColor = false;
+            
+
             this.btnClearData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClearData.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnClearData.Location = new System.Drawing.Point(562, 13);
@@ -91,6 +136,7 @@ namespace DrinkAge_1._0
             this.btnClearData.Text = "Clear Data";
             this.btnClearData.UseVisualStyleBackColor = false;
             this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
+
             // 
             // btnComment
             // 
@@ -111,7 +157,7 @@ namespace DrinkAge_1._0
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.Location = new System.Drawing.Point(311, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 25);
+            this.label4.Size = new System.Drawing.Size(110, 31);
             this.label4.TabIndex = 19;
             this.label4.Text = "熱門排行";
             // 
@@ -121,7 +167,7 @@ namespace DrinkAge_1._0
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.Location = new System.Drawing.Point(7, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 25);
+            this.label3.Size = new System.Drawing.Size(213, 31);
             this.label3.TabIndex = 18;
             this.label3.Text = "DrinkAge  Search";
             // 
@@ -131,7 +177,7 @@ namespace DrinkAge_1._0
             this.lbl_store.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbl_store.Location = new System.Drawing.Point(312, 64);
             this.lbl_store.Name = "lbl_store";
-            this.lbl_store.Size = new System.Drawing.Size(95, 22);
+            this.lbl_store.Size = new System.Drawing.Size(117, 26);
             this.lbl_store.TabIndex = 17;
             this.lbl_store.Text = "依店家搜尋";
             // 
@@ -141,7 +187,7 @@ namespace DrinkAge_1._0
             this.lbl_category.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbl_category.Location = new System.Drawing.Point(12, 64);
             this.lbl_category.Name = "lbl_category";
-            this.lbl_category.Size = new System.Drawing.Size(95, 22);
+            this.lbl_category.Size = new System.Drawing.Size(117, 26);
             this.lbl_category.TabIndex = 16;
             this.lbl_category.Text = "依分類搜尋";
             // 
@@ -154,7 +200,7 @@ namespace DrinkAge_1._0
             this.cboStore.Location = new System.Drawing.Point(316, 106);
             this.cboStore.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboStore.Name = "cboStore";
-            this.cboStore.Size = new System.Drawing.Size(183, 30);
+            this.cboStore.Size = new System.Drawing.Size(183, 33);
             this.cboStore.TabIndex = 15;
             this.cboStore.SelectedIndexChanged += new System.EventHandler(this.cboStore_SelectedIndexChanged);
             // 
@@ -167,14 +213,14 @@ namespace DrinkAge_1._0
             this.cboCategory.Location = new System.Drawing.Point(112, 106);
             this.cboCategory.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(169, 30);
+            this.cboCategory.Size = new System.Drawing.Size(169, 33);
             this.cboCategory.TabIndex = 14;
             this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
             // dataGrid_Comment
             // 
-            this.dataGrid_Comment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGrid_Comment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid_Comment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGrid_Comment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -188,6 +234,11 @@ namespace DrinkAge_1._0
             this.dataGrid_Comment.RowTemplate.Height = 27;
             this.dataGrid_Comment.Size = new System.Drawing.Size(673, 239);
             this.dataGrid_Comment.TabIndex = 13;
+            // 
+            // da_DataSet2
+            // 
+            this.da_DataSet2.DataSetName = "da_DataSet";
+            this.da_DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnClose
             // 
@@ -214,7 +265,7 @@ namespace DrinkAge_1._0
             // 
             // FrmSearch_Fang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(701, 466);
@@ -236,16 +287,25 @@ namespace DrinkAge_1._0
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmSearch_Fang";
             this.Text = "FrmSearch";
+            ((System.ComponentModel.ISupportInitialize)(this.da_DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Comment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.da_DataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private da_DataSet da_DataSet1;
+        private da_DataSetTableAdapters.StoreTableAdapter storeTableAdapter1;
+        private da_DataSetTableAdapters.CategoryTableAdapter categoryTableAdapter1;
+        private da_DataSetTableAdapters.CategoryDetailTableAdapter categoryDetailTableAdapter1;
+        private da_DataSetTableAdapters.ProductsTableAdapter productsTableAdapter1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboCategoryDetail;
+        private da_DataSetTableAdapters.CommentTableAdapter commentTableAdapter1;
         private System.Windows.Forms.Button btnClearData;
         private System.Windows.Forms.Button btnComment;
         private System.Windows.Forms.Label label4;
@@ -255,6 +315,7 @@ namespace DrinkAge_1._0
         private System.Windows.Forms.ComboBox cboStore;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.DataGridView dataGrid_Comment;
+        private da_DataSet da_DataSet2;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label5;
     }

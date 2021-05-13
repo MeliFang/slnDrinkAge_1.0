@@ -1,15 +1,13 @@
-﻿using System;
+﻿using DrinkAge.會員;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Imaging;
-using System.Text.RegularExpressions;
 
 namespace DrinkAge_1._0
 {
@@ -18,7 +16,6 @@ namespace DrinkAge_1._0
         public FrmIndex()
         {
             InitializeComponent();
-            timer1.Enabled = true;
         }
 
 
@@ -58,43 +55,12 @@ namespace DrinkAge_1._0
             listBox8.Items.Add("Comeby-黃金奶綠");
             listBox8.Items.Add("清心福全-鳳梨冰茶");
 
-            
-
-        }
-        private int IndexPicure;
-      
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            IndexPicure = IndexPicure + 1;
-            if (IndexPicure >= 3)
-                IndexPicure = -1;
-            if (IndexPicure == 0)
-            {
-                this.IndexPic.Image = Image.FromFile("C:\\Users\\User\\Documents\\GitHub\\slnDrinkAge_1.0\\DrinkAge_1.0\\image\\img_ad\\ad_01.jpg");
-                //this.IndexPic.Image = Image.FromFile("E:\\CSharp_Course\\DrinkAge\\Winform\\0512\\0512\\slnDrinkAge_1.0\\DrinkAge_1.0\\image\\Img_Ad\\ad_01.jpg");
-                timer1.Interval = 3000;
-            //E:\CSharp_Course\DrinkAge\Winform\0512\0512\slnDrinkAge_1.0\DrinkAge_1.0\image\Img_Ad
-            }
-            else if (IndexPicure == 1)
-            {
-                this.IndexPic.Image = Image.FromFile("C:\\Users\\User\\Documents\\GitHub\\slnDrinkAge_1.0\\DrinkAge_1.0\\image\\img_ad\\ad_02.jpg");
-                //this.IndexPic.Image = Image.FromFile("E:\\CSharp_Course\\DrinkAge\\Winform\\0512\\0512\\slnDrinkAge_1.0\\DrinkAge_1.0\\image\\Img_Ad\\ad_02.jpg");
-               
-                timer1.Interval = 3000;
-            }
-            else if (IndexPicure == 2)
-            {
-                this.IndexPic.Image = Image.FromFile("C:\\Users\\User\\Documents\\GitHub\\slnDrinkAge_1.0\\DrinkAge_1.0\\image\\img_ad\\ad_03.jpeg");
-                //this.IndexPic.Image = Image.FromFile("E:\\CSharp_Course\\DrinkAge\\Winform\\0512\\0512\\slnDrinkAge_1.0\\DrinkAge_1.0\\image\\Img_Ad\\ad_03.jpeg");
-                timer1.Interval = 3000;
-            }
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void btnMemberLogon_Click(object sender, EventArgs e)
         {
-            string[] items = Regex.Split(textBox1.Text, "\r\n");
-            listBox2.Items.AddRange(items);
+            //member01 f = new member01();
+            //f.Show();
         }
     }
 }

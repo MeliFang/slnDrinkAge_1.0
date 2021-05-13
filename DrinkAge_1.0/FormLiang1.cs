@@ -14,12 +14,8 @@ namespace PrjLiang
     public partial class FormLiang1 : Form
     {
         DrinkAgeEntities dbContext = new DrinkAgeEntities();
-        public string storeName { get; set; }
-        public string product { get; set; }
-        public FormLiang1(string StoreName, string Product)
+        public FormLiang1(string NickName, string StoreName, string Product)
         {
-            this.storeName = StoreName;
-            this.product = Product;
             InitializeComponent();
             ShowAllCommentSource();
             ShowTopCommentSource();
@@ -33,7 +29,7 @@ namespace PrjLiang
             var q = (from c in dbContext.Comments
                      where c.Product.ProductName == lblProduct.Text && c.Product.Store.StoreName == lblStore.Text
                      orderby c.GP_Quantity descending
-                     select new { c.CommentID, c.ProductID, c.Comment1, c.Star, c.GP_Quantity, c.BP_Quantity, c.Member, c.CommentPicture, c.CommentDate, c.Display }).Take(3);
+                     select new { c.CommentID, c.ProductID, c.Comment1, c.Star, c.GP_Quantity, c.BP_Quantity, c.Display }).Take(3);
 
             this.bindingSource2.DataSource = q.ToList();
             this.dataGridView2.DataSource = this.bindingSource2;
@@ -72,7 +68,7 @@ namespace PrjLiang
             this.dataGridView1.DataSource = null;
             var q = from c in dbContext.Comments
                     where c.Product.ProductName == lblProduct.Text && c.Product.Store.StoreName == lblStore.Text
-                    select new { c.CommentID, c.ProductID, c.Comment1, c.Star, c.GP_Quantity, c.BP_Quantity, c.Member, c.CommentPicture, c.CommentDate, c.Display };
+                    select new { c.CommentID, c.ProductID, c.Comment1, c.Star, c.GP_Quantity, c.BP_Quantity, c.Display };
 
             this.bindingSource1.DataSource = q.ToList();
             this.dataGridView1.DataSource = this.bindingSource1;
@@ -83,7 +79,7 @@ namespace PrjLiang
 
         private void btnCommon_Click(object sender, EventArgs e)
         {
-            var q = from p in dbContext.Products  //取出飲品的drinkID
+            var q = from p in dbContext.Products
                     where p.ProductName == lblProduct.Text && p.Store.StoreName == lblStore.Text
                     select p.ProductID;
 
@@ -93,24 +89,12 @@ namespace PrjLiang
                 drinkID = s;
             }
 
-            var q1 = from m in dbContext.Members  //取出登入會員的memberID
-                    where m.NickName == lblNickName.Text
-                    select m.MemberID;
-
-            int _MemberID = 0;
-            foreach (var s in q1)
-            {
-                _MemberID = s;
-            }
-
-            DateTime _dateTime = DateTime.Now;
-
             byte[] _picbytes;  //抓照片的二進制
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
             this.picBoxComment.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             _picbytes = ms.GetBuffer();
 
-            Comment comment = new Comment { ProductID = drinkID, Comment1 = PeopleCommon.Text, Star = score, GP_Quantity = 0, BP_Quantity = 0, MemberID = _MemberID, CommentPicture = _picbytes, CommentDate = _dateTime, Display = true };
+            Comment comment = new Comment { ProductID = drinkID, Comment1 = PeopleCommon.Text, Star = score, GP_Quantity = 0, BP_Quantity = 0, CommentPicture = _picbytes, Display = true };
             this.dbContext.Comments.Add(comment);
             this.dbContext.SaveChanges();
 
@@ -118,28 +102,6 @@ namespace PrjLiang
             ShowTopCommentSource();
             ShowLblScoreAvg();
             ShowLblCommentNum();
-            AddCommentDetail();
-        }
-
-        private void AddCommentDetail()
-        {
-            var _commentID = (int)dataGridView1.Rows[dataGridView1.RowCount-1].Cells[0].Value;  //找出全部評論最新一筆的評論ID
-            var _memberCount = (from m in dbContext.Members  //抓總共幾個會員
-                     select m).Count();
-            var _MID = from m in dbContext.Members
-                     select m.MemberID;
-            List<int> AllMemberID = new List<int>();
-            foreach(var n in _MID)
-            {
-                AllMemberID.Add(n);
-            }
-            for (int i = 0; i < _memberCount; i++) 
-            {
-                CommentDetail commentDetail = new CommentDetail { MemberID = AllMemberID[i], CommentID = _commentID, GP = 0, BP = 0 };
-                this.dbContext.CommentDetails.Add(commentDetail);
-            }
-
-            this.dbContext.SaveChanges();
         }
 
         //int likeNum = 0;
@@ -170,12 +132,12 @@ namespace PrjLiang
             }
 
             var b = (int)dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value;  //找出該登入會員對應的評論明細
-            CommentDetail ComDetail = (dbContext.CommentDetails.Where(c => c.CommentID == b && c.MemberID == _MemberID)).FirstOrDefault();           
+            CommentDetail ComDetail = (dbContext.CommentDetails.Where(c => c.CommentID == b && c.MemberID == _MemberID)).FirstOrDefault();
             ComDetail.GP++;
 
             if (/*_likebool == true &&*/ ComDetail.GP <= 2)
             {
-                
+
                 var a = (int)dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value;
 
                 Comment Com = (dbContext.Comments.Where(c =>
@@ -278,7 +240,7 @@ namespace PrjLiang
             ShowAllCommentSource();
             ShowTopCommentSource();
         }
-       
+
         private int score;  //星星分數
         private string op;  //選擇按鈕
         private void btnStar_Click(object sender, EventArgs e)
@@ -307,8 +269,8 @@ namespace PrjLiang
                     where m.NickName == lblNickName.Text
                     select m.MemberID;
 
-            int _MemberID = 0;  
-            foreach(var s in q)
+            int _MemberID = 0;
+            foreach (var s in q)
             {
                 _MemberID = s;
             }
@@ -316,7 +278,7 @@ namespace PrjLiang
             var a = (int)dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value;  //找出該登入會員對應的評論明細
             CommentDetail ComDetail = (dbContext.CommentDetails.Where(c => c.CommentID == a && c.MemberID == _MemberID)).FirstOrDefault();
 
-            if(ComDetail.GP == 0 && ComDetail.BP == 0)
+            if (ComDetail.GP == 0 && ComDetail.BP == 0)
             {
                 btnlike.BackColor = Color.FromArgb(224, 224, 224);
                 btndislike.BackColor = Color.FromArgb(224, 224, 224);
@@ -326,7 +288,7 @@ namespace PrjLiang
                 btnlike.BackColor = Color.LightSkyBlue;
                 btndislike.BackColor = Color.FromArgb(224, 224, 224);
             }
-            else if(ComDetail.GP == 1 && ComDetail.BP == 1)
+            else if (ComDetail.GP == 1 && ComDetail.BP == 1)
             {
                 btnlike.BackColor = Color.LightSkyBlue;
                 btndislike.BackColor = Color.Red;
@@ -345,16 +307,10 @@ namespace PrjLiang
 
         private void btnCommentPic_Click(object sender, EventArgs e)
         {
-            if(this.openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 this.picBoxComment.Image = Image.FromFile(this.openFileDialog1.FileName);
             }
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            //FormUpdateLiang UpdateCommon = new FormUpdateLiang();
-            //UpdateCommon.Show();
         }
     }
 }
